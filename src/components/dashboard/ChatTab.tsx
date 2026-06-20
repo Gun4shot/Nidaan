@@ -2,6 +2,8 @@
 
 import { useState, useRef, useEffect } from 'react';
 import type { ChatMessage } from '@/hooks/useSessions';
+import { useVoiceInput } from '@/hooks/useVoiceInput';
+import Waveform from './Waveform';
 
 interface ChatTabProps {
   messages: ChatMessage[];
@@ -11,6 +13,31 @@ interface ChatTabProps {
 export default function ChatTab({ messages, onMessagesChange }: ChatTabProps) {
   const [input, setInput] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const prefixRef = useRef('');
+  const wasListeningRef = useRef(false);
+
+  const voice = useVoiceInput({
+    onInterim: (text) => {
+      setInput(prefixRef.current + text);
+    },
+    onResult: (text) => {
+      setInput(prefixRef.current + text);
+      prefixRef.current = '';
+    },
+    onError: (err) => {
+      console.error('Voice error:', err);
+    },
+  });
+
+  useEffect(() => {
+    if (voice.state === 'listening' && !wasListeningRef.current) {
+      prefixRef.current = input ? input + ' ' : '';
+      wasListeningRef.current = true;
+    }
+    if (voice.state === 'idle' && wasListeningRef.current) {
+      wasListeningRef.current = false;
+    }
+  }, [voice.state]);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -39,6 +66,7 @@ export default function ChatTab({ messages, onMessagesChange }: ChatTabProps) {
 
     onMessagesChange([...messages, newMsg]);
     setInput('');
+    prefixRef.current = '';
   };
 
   return (
@@ -67,18 +95,31 @@ export default function ChatTab({ messages, onMessagesChange }: ChatTabProps) {
       </div>
 
       <div className="chat__input-area">
-        <div className="chat__input-wrapper">
+        <div className={`chat__input-wrapper ${voice.state === 'listening' ? 'chat__input-wrapper--recording' : ''}`}>
+          {voice.state === 'listening' && (
+            <div className="chat__voice-indicator">
+              <span className="chat__voice-dot" />
+              <Waveform analyserNode={voice.analyserNode} active={voice.state === 'listening'} />
+            </div>
+          )}
           <input
             type="text"
             className="chat__input"
-            placeholder="Describe symptoms, ask about medications, or request analysis..."
+            placeholder={voice.state === 'listening' ? 'Listening...' : 'Describe symptoms, ask about medications, or request analysis...'}
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+            disabled={voice.state === 'processing'}
           />
           <div className="chat__input-actions">
-            <button className="chat__input-btn" title="Voice input">
-              <span className="material-symbols-outlined">mic</span>
+            <button
+              className={`chat__input-btn ${voice.state === 'listening' ? 'chat__input-btn--recording' : ''}`}
+              onClick={voice.toggle}
+              title={voice.state === 'listening' ? 'Stop recording' : 'Voice input'}
+            >
+              <span className="material-symbols-outlined">
+                {voice.state === 'listening' ? 'stop' : voice.state === 'processing' ? 'hourglass_empty' : 'mic'}
+              </span>
             </button>
             <button className="chat__send-btn" onClick={handleSend} title="Send">
               <span className="material-symbols-outlined">arrow_upward</span>

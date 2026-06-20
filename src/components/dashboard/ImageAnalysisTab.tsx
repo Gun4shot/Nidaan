@@ -2,6 +2,8 @@
 
 import { useState, useRef, useEffect } from 'react';
 import type { ChatMessage, ImageItem } from '@/hooks/useSessions';
+import { useVoiceInput } from '@/hooks/useVoiceInput';
+import Waveform from './Waveform';
 
 type LayoutMode = 'single' | 'grid' | 'compare';
 
@@ -18,6 +20,24 @@ export default function ImageAnalysisTab({ images, onImagesChange, chatMessages,
   const [zoom, setZoom] = useState(1);
   const [layout, setLayout] = useState<LayoutMode>('single');
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const prefixRef = useRef('');
+  const wasListeningRef = useRef(false);
+
+  const voice = useVoiceInput({
+    onInterim: (text) => setInput(prefixRef.current + text),
+    onResult: (text) => { setInput(prefixRef.current + text); prefixRef.current = ''; },
+    onError: (err) => console.error('Voice error:', err),
+  });
+
+  useEffect(() => {
+    if (voice.state === 'listening' && !wasListeningRef.current) {
+      prefixRef.current = input ? input + ' ' : '';
+      wasListeningRef.current = true;
+    }
+    if (voice.state === 'idle' && wasListeningRef.current) {
+      wasListeningRef.current = false;
+    }
+  }, [voice.state]);
 
   const currentImage = images[activeImage];
 
@@ -183,10 +203,16 @@ export default function ImageAnalysisTab({ images, onImagesChange, chatMessages,
         </div>
 
         <div className="imaging__chat-input-area">
-          <div className="imaging__chat-input-wrapper">
+          <div className={`imaging__chat-input-wrapper ${voice.state === 'listening' ? 'imaging__chat-input-wrapper--recording' : ''}`}>
+            {voice.state === 'listening' && (
+              <div className="imaging__voice-indicator">
+                <span className="imaging__voice-dot" />
+                <Waveform analyserNode={voice.analyserNode} active={voice.state === 'listening'} />
+              </div>
+            )}
             <textarea
               className="imaging__chat-input custom-scrollbar"
-              placeholder="Ask about findings..."
+              placeholder={voice.state === 'listening' ? 'Listening...' : 'Ask about findings...'}
               rows={2}
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -196,10 +222,22 @@ export default function ImageAnalysisTab({ images, onImagesChange, chatMessages,
                   handleSend();
                 }
               }}
+              disabled={voice.state === 'processing'}
             />
-            <button className="imaging__chat-send" onClick={handleSend}>
-              <span className="material-symbols-outlined">arrow_upward</span>
-            </button>
+            <div className="imaging__chat-input-actions">
+              <button
+                className={`imaging__voice-btn ${voice.state === 'listening' ? 'imaging__voice-btn--recording' : ''}`}
+                onClick={voice.toggle}
+                title={voice.state === 'listening' ? 'Stop recording' : 'Voice input'}
+              >
+                <span className="material-symbols-outlined">
+                  {voice.state === 'listening' ? 'stop' : voice.state === 'processing' ? 'hourglass_empty' : 'mic'}
+                </span>
+              </button>
+              <button className="imaging__chat-send" onClick={handleSend}>
+                <span className="material-symbols-outlined">arrow_upward</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
