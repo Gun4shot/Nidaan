@@ -1,0 +1,111 @@
+Title: Differences in primary cardiovascular disease prevention between the 2013 and 2016 cholesterol guidelines and impact of the 2017 hypertension guideline in the United States.
+Source: PubMed Central (PMC8031287)
+URL: https://pubmed.ncbi.nlm.nih.gov/8031287/
+
+J Clin Hypertens (Greenwich)J Clin Hypertens (Greenwich)4028jclinhypeJCHThe Journal of Clinical Hypertension1524-61751751-7176WileyPMC8031287PMC8031287.1803128780312872977498810.1111/jch.13314JCH133141Original PaperBlood Pressure and Major Clinical OutcomesDifferences in primary cardiovascular disease prevention between the 2013 and 2016 cholesterol guidelines and impact of the 2017 hypertension guideline in the United States
+EGAN et al.EganBrent M.MDhttp://orcid.org/0000-0002-1470-5875
+1
+
+2
+began@ccihealth.orgLiJiexiangPhD
+1
+
+3
+DavisRobert A.MS
+1
+
+2
+FiscellaKevin A.MD, MPH
+4
+TobinJonathan N.PhD
+5
+
+6
+
+7
+JonesDaniel W.MD
+8
+
+9
+SinopoliAngeloMD
+1
+
+2
+
+1
+Care Coordination Institute
+Greenville
+SC
+USA
+
+2
+Department of Medicine
+University of South Carolina School of Medicine
+Greenville
+SC
+USA
+
+3
+Department of Mathematics
+College of Charleston
+Charleston
+SC
+USA
+
+4
+Department of Family Medicine
+University of Rochester Medical Center
+Rochester
+NY
+USA
+
+5
+Clinical Directors Network (CDN)
+New York
+NY
+USA
+
+6
+Center for Clinical and Translational Science
+The Rockefeller University
+New York
+NY
+USA
+
+7
+Department of Epidemiology and Population Health
+Albert Einstein College of Medicine/Montefiore Medical Center
+Bronx
+NY
+USA
+
+8
+Department of Medicine
+University of Mississippi Medical Center
+Jackson
+MS
+USA
+
+9
+Department of Physiology &amp; Biophysics
+University of Mississippi Medical Center
+Jackson
+MS
+USA
+*Correspondence
+Brent M. Egan, MD, Care Coordination Institute, Greenville, SC, USA.
+Email: began@ccihealth.org18520186201820637932810.1111/jch.2018.20.issue-69911000044201806220182042018180520181612202108082024©2018 Wiley Periodicals, Inc.The US Preventive Services Task Force cholesterol guideline recommended statins for fewer adults than the 2013 American College of Cardiology/American Heart Association (ACC/AHA) guideline by setting a higher 10‐year atherosclerotic cardiovascular disease threshold (≥10.0% vs ≥7.5%) and requiring concomitant diabetes mellitus, hypertension, dyslipidemia, or cigarette smoking. The 2017 ACC/AHA hypertension guideline lowered the hypertension threshold, increasing 2016 guideline statin‐eligible adults. Cross‐sectional data on US adults aged 40 to 75 years enabled estimated numbers for the 2013 guideline and 2016 guideline with hypertension thresholds of ≥140/≥90 mm Hg and ≥130/80 mm Hg, respectively, on: (1) untreated, statin‐eligible adults for primary atherosclerotic cardiovascular disease prevention (25.40, 14.72, 15.35 million); (2) atherosclerotic cardiovascular disease events prevented annually (124 000, 70 852, 73 199); (3) number needed to treat (21, 21, 21); and (4) number needed to harm (38, 143, 143) per 1000 patient‐years for incident diabetes mellitus (42 800, 6700, 7100 cases per year). Despite the lower hypertension threshold, the 2013 cholesterol guideline qualifies approximately 10 million more adults for statins and prevents approximately 50 600 more primary atherosclerotic cardiovascular disease events but induces approximately 35 700 more diabetes mellitus cases annually than the 2016 guideline.atherosclerotic cardiovascular diseasecholesterol guidelineincident diabetes mellituspreventionstatinsNational Heart, Lung and Blood Institute 10.13039/100000050R18‐HL‐117801Agency for Healthcare Research and Quality 10.13039/100000133P30‐HS‐021667Centers for Disease Control and Prevention 10.13039/100000030CY‐15‐017CY‐4‐509pmc-status-qastatus0pmc-status-liveyespmc-status-embargonopmc-status-releasedyespmc-prop-open-accessnopmc-prop-olfnopmc-prop-manuscriptnopmc-prop-legally-suppressednopmc-prop-has-pdfyespmc-prop-has-supplementnopmc-prop-pdf-onlynopmc-prop-suppress-copyrightnopmc-prop-is-real-versionnopmc-prop-is-scanned-articlenopmc-prop-preprintnopmc-prop-in-epmcyessource-schema-version-number2.0cover-dateJune 2018details-of-publishers-convertorConverter:WILEY_ML3GV2_TO_JATSPMC version:6.0.1 mode:remove_FC converted:06.04.2021
+
+Egan
+BM
+, 
+Li
+J
+, 
+Davis
+RA
+, et al. Differences in primary cardiovascular disease prevention between the 2013 and 2016 cholesterol guidelines and impact of the 2017 hypertension guideline in the United States. J Clin Hypertens. 2018;20:991–1000. 10.1111/jch.13314
+PMC803128729774988
+
+Funding information
+Centers for Disease Control and Prevention (CDC), “State public health actions to prevent and control diabetes, heart disease, obesity and associated risk factors and promote school health.” CDC 1305 to the South Carolina Department of Health and Environmental Control with subcontract to CCI.CDC, “State and local public health actions to prevent obesity, diabetes, and heart disease and stroke.” CDC, 1422 to the South Carolina Department of Health and Environmental Control with subcontract to CCI.Agency for Healthcare Research and Quality, “N2: Building a Network of Safety Net PBRNs” (grant No. 1 P30‐HS‐021667) to the Clinical Directors Network.National Heart, Lung and Blood Institute, “Blood Pressure‐Visit Intensification for Successful Improvement of Treatment (BP‐Visit)” (grant No. 1 R18‐HL‐117801) to the Clinical Directors Network.
