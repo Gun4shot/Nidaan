@@ -6,9 +6,10 @@ import { useEffect, useState } from 'react';
 import Sidebar from '@/components/dashboard/Sidebar';
 import ChatTab from '@/components/dashboard/ChatTab';
 import ImageAnalysisTab from '@/components/dashboard/ImageAnalysisTab';
+import AnalyticsTab from '@/components/dashboard/AnalyticsTab';
 import { useSessions, ChatMessage, ImageItem } from '@/hooks/useSessions';
 
-type Tab = 'chat' | 'imaging';
+type Tab = 'chat' | 'imaging' | 'analytics';
 
 export default function ChatPage() {
   const { data: session, status } = useSession();
@@ -91,9 +92,15 @@ export default function ChatPage() {
             >
               Imaging
             </button>
+            <button
+              className={`dash__switcher-btn ${activeTab === 'analytics' ? 'dash__switcher-btn--active' : ''}`}
+              onClick={() => setActiveTab('analytics')}
+            >
+              Analytics
+            </button>
             <span
               className="dash__switcher-indicator"
-              style={{ transform: activeTab === 'imaging' ? 'translateX(100%)' : 'translateX(0)' }}
+              style={{ transform: activeTab === 'imaging' ? 'translateX(100%)' : activeTab === 'analytics' ? 'translateX(200%)' : 'translateX(0)' }}
             />
           </div>
 
@@ -166,13 +173,15 @@ export default function ChatPage() {
               messages={activeSession.chatMessages}
               onMessagesChange={(msgs: ChatMessage[]) => updateSession(activeId!, { chatMessages: msgs })}
             />
-          ) : (
+          ) : activeTab === 'imaging' ? (
             <ImageAnalysisTab
               images={activeSession.images}
               onImagesChange={(imgs: ImageItem[]) => updateSession(activeId!, { images: imgs })}
               chatMessages={activeSession.imagingMessages}
               onChatMessagesChange={(msgs: ChatMessage[]) => updateSession(activeId!, { imagingMessages: msgs })}
             />
+          ) : (
+            <AnalyticsTab />
           )}
         </div>
       </div>

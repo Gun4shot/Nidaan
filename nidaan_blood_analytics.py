@@ -145,8 +145,14 @@ REFERENCE_RANGES = {
     'Triglycerides':(0,  50,  150, 500),
 }
 
-os.makedirs('nidaan_outputs', exist_ok=True)
-print('Output folder: ./nidaan_outputs')
+OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'backend', 'nidaan_outputs')
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+print(f'Output folder: {OUTPUT_DIR}')
+
+csv_path = os.path.join(OUTPUT_DIR, 'nidaan_blood_dataset.csv')
+df_save = df.drop(columns=['anomaly', 'anomaly_score', 'is_anomaly', 'PC1', 'PC2', 'risk_score'], errors='ignore')
+df_save.to_csv(csv_path, index=False)
+print(f'Saved dataset CSV -> {csv_path}')
 
 
 # ============================================================
@@ -207,7 +213,7 @@ for ax, (group, markers) in zip(axes, BIOMARKERS.items()):
         ax.text(0.99, y, status, color=color, fontsize=7.5, va='center', ha='right')
 
 plt.tight_layout()
-plt.savefig('nidaan_outputs/01_organ_panel_summary.png', dpi=150,
+plt.savefig(os.path.join(OUTPUT_DIR, '01_organ_panel_summary.png'), dpi=150,
             bbox_inches='tight', facecolor=NIDAAN_COLORS['bg'])
 plt.close()
 print('  Saved -> nidaan_outputs/01_organ_panel_summary.png')
@@ -263,7 +269,7 @@ fig.legend(handles=legend_patches, loc='upper right', framealpha=0,
            labelcolor=NIDAAN_COLORS['text'], fontsize=9)
 
 plt.tight_layout()
-plt.savefig('nidaan_outputs/02_reference_range_bars.png', dpi=150,
+plt.savefig(os.path.join(OUTPUT_DIR, '02_reference_range_bars.png'), dpi=150,
             bbox_inches='tight', facecolor=NIDAAN_COLORS['bg'])
 plt.close()
 print('  Saved -> nidaan_outputs/02_reference_range_bars.png')
@@ -312,7 +318,7 @@ for (grp, markers), color, size in zip(BIOMARKERS.items(), group_colors_list, gr
     prev += size
 
 plt.tight_layout()
-plt.savefig('nidaan_outputs/03_correlation_heatmap.png', dpi=150,
+plt.savefig(os.path.join(OUTPUT_DIR, '03_correlation_heatmap.png'), dpi=150,
             bbox_inches='tight', facecolor=NIDAAN_COLORS['bg'])
 plt.close()
 print('  Saved -> nidaan_outputs/03_correlation_heatmap.png')
@@ -358,7 +364,7 @@ for ax, marker in zip(axes.flat, key_markers):
     ax.set_xticklabels(ax.get_xticklabels(), rotation=25, ha='right')
 
 plt.tight_layout()
-plt.savefig('nidaan_outputs/04_distribution_plots.png', dpi=150,
+plt.savefig(os.path.join(OUTPUT_DIR, '04_distribution_plots.png'), dpi=150,
             bbox_inches='tight', facecolor=NIDAAN_COLORS['bg'])
 plt.close()
 print('  Saved -> nidaan_outputs/04_distribution_plots.png')
@@ -417,7 +423,7 @@ fig.update_layout(
                 bordercolor=NIDAAN_COLORS['border']),
     height=550
 )
-fig.write_image('nidaan_outputs/05_radar_chart.png', scale=2)
+fig.write_image(os.path.join(OUTPUT_DIR, '05_radar_chart.png'), scale=2)
 print('  Saved -> nidaan_outputs/05_radar_chart.png')
 
 
@@ -464,7 +470,7 @@ for ax, marker in zip(axes.flat, trend_markers):
     ax.tick_params(colors=NIDAAN_COLORS['muted'])
 
 plt.tight_layout()
-plt.savefig('nidaan_outputs/06_trend_lines.png', dpi=150,
+plt.savefig(os.path.join(OUTPUT_DIR, '06_trend_lines.png'), dpi=150,
             bbox_inches='tight', facecolor=NIDAAN_COLORS['bg'])
 plt.close()
 print('  Saved -> nidaan_outputs/06_trend_lines.png')
@@ -523,7 +529,7 @@ ax2.tick_params(colors=NIDAAN_COLORS['muted'])
 ax2.legend(facecolor=NIDAAN_COLORS['card'], labelcolor=NIDAAN_COLORS['text'], fontsize=9)
 
 plt.tight_layout()
-plt.savefig('nidaan_outputs/07_anomaly_detection.png', dpi=150,
+plt.savefig(os.path.join(OUTPUT_DIR, '07_anomaly_detection.png'), dpi=150,
             bbox_inches='tight', facecolor=NIDAAN_COLORS['bg'])
 plt.close()
 print(f'  Saved -> nidaan_outputs/07_anomaly_detection.png')
@@ -607,7 +613,7 @@ fig.update_layout(
                font=dict(size=14, color=NIDAAN_COLORS['text']), x=0.5),
     height=520
 )
-fig.write_image('nidaan_outputs/08_risk_score_gauge.png', scale=2)
+fig.write_image(os.path.join(OUTPUT_DIR, '08_risk_score_gauge.png'), scale=2)
 print('  Saved -> nidaan_outputs/08_risk_score_gauge.png')
 
 
@@ -648,7 +654,7 @@ fig.update_layout(
     yaxis=dict(gridcolor=NIDAAN_COLORS['border']),
     height=520
 )
-fig.write_image('nidaan_outputs/09_pca_clustering.png', scale=2)
+fig.write_image(os.path.join(OUTPUT_DIR, '09_pca_clustering.png'), scale=2)
 print('  Saved -> nidaan_outputs/09_pca_clustering.png')
 
 
@@ -697,7 +703,7 @@ ax.tick_params(colors=NIDAAN_COLORS['muted'])
 ax.legend(facecolor=NIDAAN_COLORS['card'], labelcolor=NIDAAN_COLORS['text'], fontsize=9, loc='lower right')
 
 plt.tight_layout()
-plt.savefig('nidaan_outputs/10_population_percentile.png', dpi=150,
+plt.savefig(os.path.join(OUTPUT_DIR, '10_population_percentile.png'), dpi=150,
             bbox_inches='tight', facecolor=NIDAAN_COLORS['bg'])
 plt.close()
 print('  Saved -> nidaan_outputs/10_population_percentile.png')
@@ -776,7 +782,7 @@ ax2.set_title('Risk score per scenario', color=NIDAAN_COLORS['text'], fontsize=1
 ax2.tick_params(colors=NIDAAN_COLORS['muted'])
 
 plt.tight_layout()
-plt.savefig('nidaan_outputs/11_what_if_simulator.png', dpi=150,
+plt.savefig(os.path.join(OUTPUT_DIR, '11_what_if_simulator.png'), dpi=150,
             bbox_inches='tight', facecolor=NIDAAN_COLORS['bg'])
 plt.close()
 print('  Saved -> nidaan_outputs/11_what_if_simulator.png')
@@ -872,7 +878,7 @@ ax.legend(handles=legend_items, loc='lower left',
           fontsize=8, framealpha=0.9, edgecolor=NIDAAN_COLORS['border'])
 
 plt.tight_layout()
-plt.savefig('nidaan_outputs/12_causal_graph.png', dpi=150,
+plt.savefig(os.path.join(OUTPUT_DIR, '12_causal_graph.png'), dpi=150,
             bbox_inches='tight', facecolor=NIDAAN_COLORS['bg'])
 plt.close()
 print('  Saved -> nidaan_outputs/12_causal_graph.png')
@@ -883,11 +889,12 @@ print('  Saved -> nidaan_outputs/12_causal_graph.png')
 # ============================================================
 import zipfile, glob
 
-png_files = sorted(glob.glob('nidaan_outputs/*.png'))
-with zipfile.ZipFile('nidaan_blood_analytics_plots.zip', 'w', zipfile.ZIP_DEFLATED) as zf:
+png_files = sorted(glob.glob(os.path.join(OUTPUT_DIR, '*.png')))
+zip_path = os.path.join(OUTPUT_DIR, 'nidaan_blood_analytics_plots.zip')
+with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zf:
     for f in png_files:
-        zf.write(f)
-print(f'\nZipped {len(png_files)} plots -> nidaan_blood_analytics_plots.zip')
+        zf.write(f, os.path.basename(f))
+print(f'\nZipped {len(png_files)} plots -> {zip_path}')
 
 print('\n============================================')
 print('  ALL 12 VISUALIZATIONS COMPLETE')
