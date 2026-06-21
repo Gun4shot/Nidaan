@@ -47,7 +47,7 @@ export default function AboutSection() {
             trigger={isVisible}
           />
           <TextScramble
-            text="in every language."
+            text="in multiple language."
             className="about-section__title-line"
             delay={0.2}
             trigger={isVisible}
@@ -59,21 +59,21 @@ export default function AboutSection() {
         <div className="about-section__body">
           <p className="about-section__paragraph about-section__paragraph--lg">
             <TextScramble
-              text="Fine-tuned on 250,000+ clinical Q&A pairs. Grounded in WHO, CDC, and NHS guidelines."
+              text="Fine-tuned on BioMistral. It is a medical AI model trained on 1.47M research papers and tested on medical QA benchmarks."
               delay={0.5}
               trigger={isVisible}
             />
           </p>
           <p className="about-section__paragraph">
             <TextScramble
-              text="Understands symptoms, analyzes medical images, and speaks 13 languages — including Nepali."
+              text="Understands symptoms, analyzes medical images, and speaks multiple languages "
               delay={0.75}
               trigger={isVisible}
             />
           </p>
           <p className="about-section__paragraph">
             <TextScramble
-              text="Open source. No sign-up. No tracking. Free forever."
+              text="Open for customers. sign-up. No tracking. Freemium model."
               delay={1.0}
               trigger={isVisible}
             />

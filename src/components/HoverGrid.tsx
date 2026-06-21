@@ -25,7 +25,7 @@ const workItems: WorkItem[] = [
     title: 'Live chat',
     bgId: 'bg-1',
     images: [
-      { pos: 'pos-1', dir: 'right', src: '/media/1.jpg' },
+      { pos: 'pos-1', dir: 'right', src: '/media/p4.png' },
       { pos: 'pos-2', dir: 'left', src: '/media/2.jpg' },
       { pos: 'pos-3', dir: 'top', src: '/media/3.jpg' },
     ],
@@ -35,9 +35,9 @@ const workItems: WorkItem[] = [
     title: 'Medical Image Analysis',
     bgId: 'bg-2',
     images: [
-      { pos: 'pos-4', dir: 'bottom', src: '/media/4.jpg' },
-      { pos: 'pos-5', dir: 'right', src: '/media/5.jpg' },
-      { pos: 'pos-6', dir: 'right', src: '/media/6.jpg' },
+      { pos: 'pos-4', dir: 'bottom', src: '/media/p1.png' },
+      { pos: 'pos-5', dir: 'right', src: '/media/p2.jpg' },
+      { pos: 'pos-6', dir: 'right', src: '/media/p3.jpg' },
     ],
   },
   {
@@ -52,7 +52,7 @@ const workItems: WorkItem[] = [
   },
   {
     id: 'content-4',
-    title: 'Translation in Nepali',
+    title: 'Translation',
     bgId: 'bg-4',
     images: [
       { pos: 'pos-10', dir: 'left', src: '/media/10.jpg' },
@@ -62,7 +62,7 @@ const workItems: WorkItem[] = [
   },
   {
     id: 'content-5',
-    title: 'Hardware support',
+    title: 'Hardware analytics',
     bgId: 'bg-5',
     images: [
       { pos: 'pos-13', dir: 'right', src: '/media/13.jpg' },
@@ -295,7 +295,7 @@ export default function HoverGrid() {
               <a className="frame__back" href="#about">
                 About Us
               </a>
-              <a className="frame__github" href="https://github.com/ruslanmv/ai-medical-chatbot">
+              <a className="frame__github" href="https://github.com/Gun4shot/Nidaan">
                 GitHub
               </a>
             </div>
