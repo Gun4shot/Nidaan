@@ -5,6 +5,8 @@ import type { ChatMessage, PatientInfo } from '@/hooks/useSessions';
 import { useVoiceInput } from '@/hooks/useVoiceInput';
 import Waveform from './Waveform';
 
+const NLP_API = 'http://localhost:5001';
+
 interface ChatTabProps {
   messages: ChatMessage[];
   onMessagesChange: (msgs: ChatMessage[]) => void;
@@ -27,9 +29,11 @@ function CopyButton({ text }: { text: string }) {
 
 export default function ChatTab({ messages, onMessagesChange, patient }: ChatTabProps) {
   const [input, setInput] = useState('');
+  const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const prefixRef = useRef('');
   const wasListeningRef = useRef(false);
+  const abortRef = useRef<AbortController | null>(null);
 
   const voice = useVoiceInput({
     onInterim: (text) => setInput(prefixRef.current + text),
@@ -53,19 +57,108 @@ export default function ChatTab({ messages, onMessagesChange, patient }: ChatTab
 
   const hasUserMessages = messages.some(m => m.role === 'user');
 
-  const handleSend = () => {
-    if (!input.trim()) return;
+  const handleSend = async () => {
+    if (!input.trim() || loading) return;
 
-    const newMsg: ChatMessage = {
+    const userMsg: ChatMessage = {
       id: Date.now(),
       role: 'user',
       content: input.trim(),
       time: new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false }),
     };
 
-    onMessagesChange([...messages, newMsg]);
+    const updatedMessages = [...messages, userMsg];
+    onMessagesChange(updatedMessages);
     setInput('');
     prefixRef.current = '';
+    setLoading(true);
+
+    const assistantMsg: ChatMessage = {
+      id: Date.now() + 1,
+      role: 'assistant',
+      content: '',
+      time: new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false }),
+    };
+
+    const history = updatedMessages
+      .filter(m => m.content)
+      .slice(-10)
+      .map(m => ({ role: m.role, content: m.content }));
+
+    try {
+      abortRef.current = new AbortController();
+      const res = await fetch(`${NLP_API}/chat/stream`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: userMsg.content, history }),
+        signal: abortRef.current.signal,
+      });
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({ error: 'Request failed' }));
+        assistantMsg.content = err.error || `Server error (${res.status})`;
+        onMessagesChange([...updatedMessages, assistantMsg]);
+        setLoading(false);
+        return;
+      }
+
+      const reader = res.body?.getReader();
+      if (!reader) {
+        assistantMsg.content = 'Failed to read response stream.';
+        onMessagesChange([...updatedMessages, assistantMsg]);
+        setLoading(false);
+        return;
+      }
+
+      const decoder = new TextDecoder();
+      let buffer = '';
+      let currentContent = '';
+
+      onMessagesChange([...updatedMessages, assistantMsg]);
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+        buffer = lines.pop() || '';
+
+        for (const line of lines) {
+          if (!line.startsWith('data:')) continue;
+          const jsonStr = line.slice(5).trim();
+          if (!jsonStr) continue;
+
+          try {
+            const data = JSON.parse(jsonStr);
+            if (data.token === '[END]') break;
+            if (data.error) {
+              currentContent += `\n\nError: ${data.error}`;
+              break;
+            }
+            if (data.token) {
+              currentContent += data.token;
+              assistantMsg.content = currentContent;
+              onMessagesChange([...updatedMessages, { ...assistantMsg }]);
+            }
+          } catch {
+            continue;
+          }
+        }
+      }
+
+      if (!currentContent.trim()) {
+        assistantMsg.content = 'No response received. The NLP backend may still be loading the model. Please try again in a moment.';
+        onMessagesChange([...updatedMessages, assistantMsg]);
+      }
+    } catch (err: any) {
+      if (err.name === 'AbortError') return;
+      assistantMsg.content = 'Cannot connect to NLP backend. Make sure it is running on port 5001.\n\nRun: cd MedAI/MedAI/backend && python run.py';
+      onMessagesChange([...updatedMessages, assistantMsg]);
+    } finally {
+      setLoading(false);
+      abortRef.current = null;
+    }
   };
 
   return (
@@ -104,6 +197,13 @@ export default function ChatTab({ messages, onMessagesChange, patient }: ChatTab
               </div>
             </div>
           ))}
+          {loading && messages[messages.length - 1]?.role === 'user' && (
+            <div className="chat__msg chat__msg--assistant">
+              <div className="chat__msg-body">
+                <p className="chat__typing">Thinking...</p>
+              </div>
+            </div>
+          )}
           <div ref={messagesEndRef} />
         </div>
       </div>
@@ -119,11 +219,11 @@ export default function ChatTab({ messages, onMessagesChange, patient }: ChatTab
           <input
             type="text"
             className="chat__input"
-            placeholder={voice.state === 'listening' ? 'Listening...' : 'Describe symptoms, ask about medications, or request analysis...'}
+            placeholder={voice.state === 'listening' ? 'Listening...' : loading ? 'Waiting for response...' : 'Describe symptoms, ask about medications, or request analysis...'}
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-            disabled={voice.state === 'processing'}
+            disabled={voice.state === 'processing' || loading}
           />
           <div className="chat__input-actions">
             <button
@@ -135,8 +235,8 @@ export default function ChatTab({ messages, onMessagesChange, patient }: ChatTab
                 {voice.state === 'listening' ? 'stop' : voice.state === 'processing' ? 'hourglass_empty' : 'mic'}
               </span>
             </button>
-            <button className="chat__send-btn" onClick={handleSend} title="Send">
-              <span className="material-symbols-outlined">arrow_upward</span>
+            <button className="chat__send-btn" onClick={handleSend} title="Send" disabled={loading}>
+              <span className="material-symbols-outlined">{loading ? 'stop' : 'arrow_upward'}</span>
             </button>
           </div>
         </div>

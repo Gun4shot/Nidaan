@@ -22,7 +22,7 @@ class Config:
     MAX_CONTEXT = 4096
 
     # ── Flask ──────────────────────────────────────────
-    FLASK_PORT = int(os.getenv("FLASK_PORT", "5000"))
+    FLASK_PORT = int(os.getenv("FLASK_PORT", "5001"))
     FLASK_DEBUG = os.getenv("FLASK_DEBUG", "false").lower() == "true"
 
     # ── RAG — Embeddings ───────────────────────────────
