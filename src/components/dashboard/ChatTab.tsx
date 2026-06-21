@@ -10,6 +10,20 @@ interface ChatTabProps {
   onMessagesChange: (msgs: ChatMessage[]) => void;
 }
 
+function CopyButton({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false);
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
+  return (
+    <button className="msg-copy-btn" onClick={handleCopy} title="Copy">
+      <span className="material-symbols-outlined">{copied ? 'check' : 'content_copy'}</span>
+    </button>
+  );
+}
+
 export default function ChatTab({ messages, onMessagesChange }: ChatTabProps) {
   const [input, setInput] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -17,16 +31,9 @@ export default function ChatTab({ messages, onMessagesChange }: ChatTabProps) {
   const wasListeningRef = useRef(false);
 
   const voice = useVoiceInput({
-    onInterim: (text) => {
-      setInput(prefixRef.current + text);
-    },
-    onResult: (text) => {
-      setInput(prefixRef.current + text);
-      prefixRef.current = '';
-    },
-    onError: (err) => {
-      console.error('Voice error:', err);
-    },
+    onInterim: (text) => setInput(prefixRef.current + text),
+    onResult: (text) => { setInput(prefixRef.current + text); prefixRef.current = ''; },
+    onError: (err) => console.error('Voice error:', err),
   });
 
   useEffect(() => {
@@ -43,16 +50,7 @@ export default function ChatTab({ messages, onMessagesChange }: ChatTabProps) {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  useEffect(() => {
-    if (messages.length === 0) {
-      onMessagesChange([{
-        id: 1,
-        role: 'assistant',
-        content: 'Hello! How may I help you today?',
-        time: new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false }),
-      }]);
-    }
-  }, []);
+  const hasUserMessages = messages.some(m => m.role === 'user');
 
   const handleSend = () => {
     if (!input.trim()) return;
@@ -79,6 +77,13 @@ export default function ChatTab({ messages, onMessagesChange }: ChatTabProps) {
         <div className="chat__decor-line chat__decor-line--2" />
       </div>
 
+      {!hasUserMessages && (
+        <div className="chat__welcome">
+          <span className="material-symbols-outlined chat__welcome-icon">forum</span>
+          <p className="chat__welcome-text">Welcome! How may I help you today?</p>
+        </div>
+      )}
+
       <div className="chat__messages custom-scrollbar">
         <div className="chat__messages-inner">
           {messages.map((msg) => (
@@ -87,6 +92,7 @@ export default function ChatTab({ messages, onMessagesChange }: ChatTabProps) {
                 {msg.content.split('\n').map((p, i) => (
                   <p key={i}>{p}</p>
                 ))}
+                <CopyButton text={msg.content} />
               </div>
             </div>
           ))}
