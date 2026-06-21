@@ -1,13 +1,14 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import type { ChatMessage } from '@/hooks/useSessions';
+import type { ChatMessage, PatientInfo } from '@/hooks/useSessions';
 import { useVoiceInput } from '@/hooks/useVoiceInput';
 import Waveform from './Waveform';
 
 interface ChatTabProps {
   messages: ChatMessage[];
   onMessagesChange: (msgs: ChatMessage[]) => void;
+  patient?: PatientInfo | null;
 }
 
 function CopyButton({ text }: { text: string }) {
@@ -24,7 +25,7 @@ function CopyButton({ text }: { text: string }) {
   );
 }
 
-export default function ChatTab({ messages, onMessagesChange }: ChatTabProps) {
+export default function ChatTab({ messages, onMessagesChange, patient }: ChatTabProps) {
   const [input, setInput] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const prefixRef = useRef('');
@@ -80,7 +81,14 @@ export default function ChatTab({ messages, onMessagesChange }: ChatTabProps) {
       {!hasUserMessages && (
         <div className="chat__welcome">
           <span className="material-symbols-outlined chat__welcome-icon">forum</span>
-          <p className="chat__welcome-text">Welcome! How may I help you today?</p>
+          {patient?.name ? (
+            <>
+              <p className="chat__welcome-text">Welcome, {patient.name}!</p>
+              <p className="chat__welcome-sub">How may I help you today?</p>
+            </>
+          ) : (
+            <p className="chat__welcome-text">Welcome! How may I help you today?</p>
+          )}
         </div>
       )}
 

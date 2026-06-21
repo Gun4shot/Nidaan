@@ -15,10 +15,17 @@ export interface ImageItem {
   src: string;
 }
 
+export interface PatientInfo {
+  name: string;
+  age: string;
+  gender: string;
+}
+
 export interface Session {
   id: string;
   title: string;
   createdAt: string;
+  patient: PatientInfo | null;
   chatMessages: ChatMessage[];
   images: ImageItem[];
   imagingMessages: ChatMessage[];
@@ -69,6 +76,7 @@ export function useSessions() {
         id: generateId(),
         title: 'New session',
         createdAt: new Date().toISOString(),
+        patient: null,
         chatMessages: [],
         images: [],
         imagingMessages: [],
@@ -95,6 +103,7 @@ export function useSessions() {
       id: generateId(),
       title: 'New session',
       createdAt: new Date().toISOString(),
+      patient: null,
       chatMessages: [],
       images: [],
       imagingMessages: [],
@@ -118,6 +127,7 @@ export function useSessions() {
           id: generateId(),
           title: 'New session',
           createdAt: new Date().toISOString(),
+          patient: null,
           chatMessages: [],
           images: [],
           imagingMessages: [],

@@ -677,6 +677,7 @@ a:focus-visible { outline: 1px solid var(--color-fg); background: transparent; }
 .chat__welcome { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; pointer-events: none; z-index: 1; }
 .chat__welcome-icon { font-size: 48px; color: #e2e2e2; }
 .chat__welcome-text { font-size: 20px; font-weight: 500; color: #c4c7c7; margin: 0; letter-spacing: -0.01em; }
+.chat__welcome-sub { font-size: 16px; font-weight: 400; color: #dadada; margin: 4px 0 0 0; }
 .dash--dark .chat__welcome-icon { color: #343535; }
 .dash--dark .chat__welcome-text { color: #444748; }
 
@@ -838,3 +839,53 @@ a:focus-visible { outline: 1px solid var(--color-fg); background: transparent; }
 .dash--dark .analytics__viewer-download:hover { background: #292a2a; color: #e3e2e2; }
 .dash--dark .analytics__viewer-canvas { background: #0d0e0f; }
 .dash--dark .analytics__viewer-img { border-color: #343535; }
+
+/* ── Patient Intake Modal ── */
+
+.intake-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); backdrop-filter: blur(4px); z-index: 200; display: flex; align-items: center; justify-content: center; }
+.intake-modal { background: #ffffff; width: 100%; max-width: 440px; padding: 32px; display: flex; flex-direction: column; gap: 24px; animation: intake-in 0.3s cubic-bezier(0.19, 1, 0.22, 1); }
+@keyframes intake-in { from { opacity: 0; transform: translateY(12px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+.intake-header { text-align: center; }
+.intake-icon { font-size: 36px; color: #747878; margin-bottom: 8px; }
+.intake-title { font-size: 20px; font-weight: 600; color: #1a1c1c; margin: 0 0 4px 0; }
+.intake-subtitle { font-size: 14px; color: #747878; margin: 0; }
+
+.intake-form { display: flex; flex-direction: column; gap: 16px; }
+.intake-field { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.intake-label { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #747878; }
+.intake-input { padding: 10px 14px; border: 1px solid #e2e2e2; border-radius: 8px; font-family: "Hanken Grotesk", sans-serif; font-size: 15px; color: #1a1c1c; outline: none; transition: border-color 0.2s; background: #ffffff; }
+.intake-input:focus { border-color: #1a1c1c; }
+.intake-input::placeholder { color: #c4c7c7; }
+
+.intake-row { display: flex; gap: 16px; }
+.intake-gender { display: flex; gap: 8px; }
+.intake-gender-btn { flex: 1; padding: 10px 12px; border: 1px solid #e2e2e2; border-radius: 8px; background: #ffffff; font-family: "Hanken Grotesk", sans-serif; font-size: 14px; font-weight: 500; color: #5e5e5e; cursor: pointer; transition: background 0.15s, border-color 0.15s, color 0.15s; }
+.intake-gender-btn:hover { background: #f3f3f3; }
+.intake-gender-btn--active { background: #1a1c1c; border-color: #1a1c1c; color: #ffffff; }
+.intake-gender-btn--active:hover { background: #2a2a2a; }
+
+.intake-actions { display: flex; gap: 12px; margin-top: 8px; }
+.intake-cancel { flex: 1; padding: 12px; background: #ffffff; border: 1px solid #e2e2e2; border-radius: 8px; font-family: "Hanken Grotesk", sans-serif; font-size: 14px; font-weight: 600; color: #5e5e5e; cursor: pointer; transition: background 0.15s; }
+.intake-cancel:hover { background: #f3f3f3; }
+.intake-submit { flex: 2; padding: 12px; background: #1a1c1c; border: none; border-radius: 8px; font-family: "Hanken Grotesk", sans-serif; font-size: 14px; font-weight: 600; color: #ffffff; cursor: pointer; transition: opacity 0.15s; }
+.intake-submit:hover { opacity: 0.85; }
+.intake-submit:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.dash--dark .intake-overlay { background: rgba(0,0,0,0.6); }
+.dash--dark .intake-modal { background: #1f2020; }
+.dash--dark .intake-icon { color: #636565; }
+.dash--dark .intake-title { color: #e3e2e2; }
+.dash--dark .intake-subtitle { color: #8e9192; }
+.dash--dark .intake-input { background: #121414; border-color: #343535; color: #e3e2e2; }
+.dash--dark .intake-input:focus { border-color: #e3e2e2; }
+.dash--dark .intake-input::placeholder { color: #444748; }
+.dash--dark .intake-label { color: #8e9192; }
+.dash--dark .intake-gender-btn { background: #121414; border-color: #343535; color: #8e9192; }
+.dash--dark .intake-gender-btn:hover { background: #292a2a; }
+.dash--dark .intake-gender-btn--active { background: #e3e2e2; border-color: #e3e2e2; color: #121414; }
+.dash--dark .intake-gender-btn--active:hover { background: #c6c6c7; }
+.dash--dark .intake-cancel { background: #1f2020; border-color: #343535; color: #8e9192; }
+.dash--dark .intake-cancel:hover { background: #292a2a; }
+.dash--dark .intake-submit { background: #e3e2e2; color: #121414; }
+.dash--dark .chat__welcome-sub { color: #636565; }

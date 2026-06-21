@@ -7,7 +7,8 @@ import Sidebar from '@/components/dashboard/Sidebar';
 import ChatTab from '@/components/dashboard/ChatTab';
 import ImageAnalysisTab from '@/components/dashboard/ImageAnalysisTab';
 import AnalyticsTab from '@/components/dashboard/AnalyticsTab';
-import { useSessions, ChatMessage, ImageItem } from '@/hooks/useSessions';
+import PatientIntake from '@/components/dashboard/PatientIntake';
+import { useSessions, ChatMessage, ImageItem, PatientInfo } from '@/hooks/useSessions';
 
 type Tab = 'chat' | 'imaging' | 'analytics';
 
@@ -19,6 +20,7 @@ export default function ChatPage() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const [showIntake, setShowIntake] = useState(false);
 
   const {
     sessions,
@@ -47,6 +49,12 @@ export default function ChatPage() {
     localStorage.setItem('nidaan_dark_mode', String(darkMode));
   }, [darkMode]);
 
+  useEffect(() => {
+    if (activeSession && !activeSession.patient) {
+      setShowIntake(true);
+    }
+  }, [activeId]);
+
   if (status === 'loading') {
     return <div className="dash-loading"><div className="dash-loading__spinner" /></div>;
   }
@@ -57,8 +65,33 @@ export default function ChatPage() {
   const userEmail = session.user?.email || '';
   const userImage = session.user?.image;
 
+  const handleCreateSession = () => {
+    createSession();
+    setSidebarOpen(false);
+    setShowIntake(true);
+  };
+
+  const handleIntakeSubmit = (patient: PatientInfo) => {
+    updateSession(activeId!, {
+      patient,
+      title: patient.name,
+    });
+    setShowIntake(false);
+  };
+
+  const handleIntakeSkip = () => {
+    updateSession(activeId!, {
+      patient: { name: '', age: '', gender: '' },
+    });
+    setShowIntake(false);
+  };
+
   return (
     <div className={`dash ${darkMode ? 'dash--dark' : ''}`}>
+      {showIntake && (
+        <PatientIntake onSubmit={handleIntakeSubmit} onCancel={handleIntakeSkip} />
+      )}
+
       <Sidebar
         open={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
@@ -66,7 +99,7 @@ export default function ChatPage() {
         sessions={sessions}
         activeId={activeId}
         onSwitch={(id) => { switchSession(id); setSidebarOpen(false); }}
-        onCreate={() => { createSession(); setSidebarOpen(false); }}
+        onCreate={handleCreateSession}
         onDelete={deleteSession}
         onRename={(id, title) => updateSession(id, { title })}
       />
@@ -80,28 +113,10 @@ export default function ChatPage() {
           </div>
 
           <div className="dash__switcher">
-            <button
-              className={`dash__switcher-btn ${activeTab === 'chat' ? 'dash__switcher-btn--active' : ''}`}
-              onClick={() => setActiveTab('chat')}
-            >
-              Consult
-            </button>
-            <button
-              className={`dash__switcher-btn ${activeTab === 'imaging' ? 'dash__switcher-btn--active' : ''}`}
-              onClick={() => setActiveTab('imaging')}
-            >
-              Imaging
-            </button>
-            <button
-              className={`dash__switcher-btn ${activeTab === 'analytics' ? 'dash__switcher-btn--active' : ''}`}
-              onClick={() => setActiveTab('analytics')}
-            >
-              Analytics
-            </button>
-            <span
-              className="dash__switcher-indicator"
-              style={{ transform: activeTab === 'imaging' ? 'translateX(100%)' : activeTab === 'analytics' ? 'translateX(200%)' : 'translateX(0)' }}
-            />
+            <button className={`dash__switcher-btn ${activeTab === 'chat' ? 'dash__switcher-btn--active' : ''}`} onClick={() => setActiveTab('chat')}>Consult</button>
+            <button className={`dash__switcher-btn ${activeTab === 'imaging' ? 'dash__switcher-btn--active' : ''}`} onClick={() => setActiveTab('imaging')}>Imaging</button>
+            <button className={`dash__switcher-btn ${activeTab === 'analytics' ? 'dash__switcher-btn--active' : ''}`} onClick={() => setActiveTab('analytics')}>Analytics</button>
+            <span className="dash__switcher-indicator" style={{ transform: activeTab === 'imaging' ? 'translateX(100%)' : activeTab === 'analytics' ? 'translateX(200%)' : 'translateX(0)' }} />
           </div>
 
           <div className="dash__header-right">
@@ -112,28 +127,10 @@ export default function ChatPage() {
               {settingsOpen && (
                 <div className="dash__dropdown">
                   <div className="dash__dropdown-title">Settings</div>
-                  <label className="dash__dropdown-row">
-                    <span>Dark mode</span>
-                    <button className={`dash__toggle ${darkMode ? 'dash__toggle--on' : ''}`} onClick={() => setDarkMode(!darkMode)}>
-                      <span className="dash__toggle-knob" />
-                    </button>
-                  </label>
-                  <label className="dash__dropdown-row">
-                    <span>Language</span>
-                    <select className="dash__dropdown-select">
-                      <option>English</option>
-                      <option>Nepali</option>
-                      <option>Hindi</option>
-                    </select>
-                  </label>
-                  <label className="dash__dropdown-row">
-                    <span>Voice input</span>
-                    <input type="checkbox" defaultChecked className="dash__dropdown-check" />
-                  </label>
-                  <label className="dash__dropdown-row">
-                    <span>Notifications</span>
-                    <input type="checkbox" defaultChecked className="dash__dropdown-check" />
-                  </label>
+                  <label className="dash__dropdown-row"><span>Dark mode</span><button className={`dash__toggle ${darkMode ? 'dash__toggle--on' : ''}`} onClick={() => setDarkMode(!darkMode)}><span className="dash__toggle-knob" /></button></label>
+                  <label className="dash__dropdown-row"><span>Language</span><select className="dash__dropdown-select"><option>English</option><option>Nepali</option><option>Hindi</option></select></label>
+                  <label className="dash__dropdown-row"><span>Voice input</span><input type="checkbox" defaultChecked className="dash__dropdown-check" /></label>
+                  <label className="dash__dropdown-row"><span>Notifications</span><input type="checkbox" defaultChecked className="dash__dropdown-check" /></label>
                 </div>
               )}
             </div>
@@ -144,23 +141,11 @@ export default function ChatPage() {
               {profileOpen && (
                 <div className="dash__dropdown dash__dropdown--right">
                   <div className="dash__dropdown-profile">
-                    {userImage ? (
-                      <img src={userImage} alt="" className="dash__dropdown-avatar" />
-                    ) : (
-                      <div className="dash__dropdown-avatar-placeholder">
-                        <span className="material-symbols-outlined">person</span>
-                      </div>
-                    )}
-                    <div>
-                      <div className="dash__dropdown-name">{userName}</div>
-                      <div className="dash__dropdown-email">{userEmail}</div>
-                    </div>
+                    {userImage ? <img src={userImage} alt="" className="dash__dropdown-avatar" /> : <div className="dash__dropdown-avatar-placeholder"><span className="material-symbols-outlined">person</span></div>}
+                    <div><div className="dash__dropdown-name">{userName}</div><div className="dash__dropdown-email">{userEmail}</div></div>
                   </div>
                   <div className="dash__dropdown-divider" />
-                  <button className="dash__dropdown-action" onClick={() => signOut({ callbackUrl: '/login' })}>
-                    <span className="material-symbols-outlined">logout</span>
-                    Sign out
-                  </button>
+                  <button className="dash__dropdown-action" onClick={() => signOut({ callbackUrl: '/login' })}><span className="material-symbols-outlined">logout</span>Sign out</button>
                 </div>
               )}
             </div>
@@ -172,6 +157,7 @@ export default function ChatPage() {
             <ChatTab
               messages={activeSession.chatMessages}
               onMessagesChange={(msgs: ChatMessage[]) => updateSession(activeId!, { chatMessages: msgs })}
+              patient={activeSession.patient}
             />
           ) : activeTab === 'imaging' ? (
             <ImageAnalysisTab
