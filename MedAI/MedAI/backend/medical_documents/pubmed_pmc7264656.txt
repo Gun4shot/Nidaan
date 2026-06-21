@@ -1,0 +1,134 @@
+Title: Scientific research progress of COVID-19/SARS-CoV-2 in the first five months.
+Source: PubMed Central (PMC7264656)
+URL: https://pubmed.ncbi.nlm.nih.gov/7264656/
+
+J Cell Mol MedJ. Cell. Mol. Med2233jcmmopenJCMMJournal of Cellular and Molecular Medicine1582-18381582-4934WileyPMC7264656PMC7264656.2726465672996993232051610.1111/jcmm.15364JCMM153642ReviewReviewsScientific research progress of COVID‐19/SARS‐CoV‐2 in the first five monthsLI et al.LiHuahttps://orcid.org/0000-0001-9644-6768
+1
+lihua199988@hotmail.comLiuZhe
+2
+GeJunbo
+1
+ge.junbo@zs-hospital.sh.cn
+1
+Department of Cardiology
+Shanghai Institute of Cardiovascular Diseases
+Shanghai Xuhui District Central Hospital and Zhongshan‐Xuhui Hospital
+Zhongshan Hospital
+Fudan University
+Shanghai
+China
+
+2
+Department of Medicine
+BestNovo (Beijing) Medical Technology Co., Ltd
+Beijing
+China
+*Correspondence
+Hua Li and Junbo Ge, Department of Cardiology, Shanghai Institute of Cardiovascular Diseases, Shanghai Xuhui District Central Hospital &amp; Zhongshan‐xuhui Hospital, Zhongshan Hospital, Fudan University, 179 Fenglin Road, Shanghai, 200032, China.
+Emails: lihua199988@hotmail.com; ge.junbo@zs-hospital.sh.cn075202062020241235976010.1111/jcmm.v24.1265586570154202019420202242020010620200206202009092024726465610.1111/jcmm.15364107052020729969910.1111/jcmm.15364207052020© 2020 The Authors. Journal of Cellular and Molecular Medicine published by Foundation for Cellular and Molecular Medicine and John Wiley &amp; Sons Ltd.https://creativecommons.org/licenses/by/4.0/This is an open access article under the terms of the http://creativecommons.org/licenses/by/4.0/ License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.AbstractA cluster of pneumonia (COVID‐19) cases have been found in Wuhan China in late December, 2019, and subsequently, a novel coronavirus with a positive stranded RNA was identified to be the aetiological virus (severe acute respiratory syndrome coronavirus 2, SARS‐CoV‐2), which has a phylogenetic similarity to severe acute respiratory syndrome coronavirus (SARS‐CoV). SARS‐CoV‐2 transmits mainly through droplets and close contact and the elder or people with chronic diseases are high‐risk population. People affected by SARS‐CoV‐2 can be asymptomatic, which brings about more difficulties to control the transmission. COVID‐19 has become pandemic rapidly after onset, and so far the infected people have been above 2 000 000 and more than 130 000 died worldwide according to COVID‐19 situation dashboard of World Health Organization (https://covid19.who.int). Here, we summarized the current known knowledge regarding epidemiological, pathogenesis, pathology, clinical features, comorbidities and treatment of COVID‐19/ SARS‐CoV‐2 as reference for the prevention and control COVID‐19.National Natural Science Foundation of China 10.13039/50110000180981521001, 81870182National Key Basic Research Programme2016YFC1301204, 2020YFC1316701pmc-status-qastatus0pmc-status-liveyespmc-status-embargonopmc-status-releasedyespmc-prop-open-accessyespmc-prop-olfnopmc-prop-manuscriptnopmc-prop-legally-suppressednopmc-prop-has-pdfyespmc-prop-has-supplementyespmc-prop-pdf-onlynopmc-prop-suppress-copyrightnopmc-prop-is-real-versionnopmc-prop-is-scanned-articlenopmc-prop-preprintnopmc-prop-in-epmcyespmc-license-refCC BYsource-schema-version-number2.0cover-dateJune 2020details-of-publishers-convertorConverter:WILEY_ML3GV2_TO_JATSPMC version:5.8.4 mode:remove_FC converted:17.06.2020
+
+Li
+H
+, 
+Liu
+Z
+, 
+Ge
+J
+. Scientific research progress of COVID‐19/SARS‐CoV‐2 in the first five months. J Cell Mol Med. 2020;24:6558–6570. 10.1111/jcmm.15364
+PMC726465632320516
+1BACKGROUNDIn late December 2019, a cluster of pneumonia (COVID‐19) cases with unidentified causes have been found in Wuhan, Hubei Province, China. It is related to a positive stranded RNA virus (severe acute respiratory syndrome coronavirus 2, SARS‐CoV‐2), which has a phylogenetic similarity to severe acute respiratory syndrome coronavirus (SARS‐CoV).
+1
+ From the beginning, COVID‐19 was reported to be epidemiologically linked to the Huanan Seafood Wholesale Market, where there was sale of local fish and live wild animals.
+2
+ The subsequent evidence of clinician infection suggests that SARS‐CoV‐2 can transmit from human to human.
+3
+ Massive alveolar damage and progressive respiratory failure may lead to death in severe cases, and the counts of lymphocyte, monocyte, leucocyte, infection‐related biomarkers, inflammatory cytokines and T cells are also changed in severe patients.
+2
+, 
+4
+
+Many diagnosis and treatment strategies have been taken to prevent the spread of SARS‐CoV‐2 and isolation is the most effective way. Detection of SARS‐CoV‐2 nucleic acid or specific IgM and IgG in serum has become a convenient way to identify COVID‐19. For hospitalized patients, drug treatment such as alpha interferon, lopinavir/ritonavir, ribavirin, chloroquine phosphate and arbidol, and convalescent plasma therapy may be potential options. Convalescent plasma therapy is mainly used for the severe and critical cases. In this article, we aim to describe the epidemiological, pathogenesis, pathology, clinical features, comorbidities and treatment of COVID‐19/SARS‐CoV‐2.2EPIDEMIOLOGYSo far, the COVID‐19 patients of nine countries have surpassed 50 000 and they are American, Spain, Italy, Germany, France, The United Kingdom, China, Iran and Turkey in a descending order. The number of confirmed cases and deaths of COVID‐19 was higher than SARS‐CoV (more than 8000 confirmed cases and 800 deaths worldwide) and MERS‐CoV (2494 confirmed cases and 858 deaths worldwide).
+5
+ In a study of 99 COVID‐19 cases, nearly half of patients (49) were clustered and had exposure history.
+6
+ According to a survey conducted by Chinese Centers for Disease Control and Prevention on more than 40,000 COVID‐19 patients, about 56% of the patients were men and the median age was 59 years with 87% 30‐79 years of age, 3% 80 years or older and 2% under 20 years old.
+7
+, 
+8
+ The overall case fatality rate (CFR) was 2.3%, in which the CFR of the elderly and patients with pre‐existing comorbid conditions was higher. The CFR of over 70‐year‐old and over 80‐year‐old (including 80 years old) was around 50.8% and 14.8% of the total number of deaths, respectively. No deaths occurred in the group aged 9 years and younger.
+7
+ The incubation period of COVID‐19 was 1‐14 days with mostly 3‐7 days, and the maximum incubation period could reach 24 days.
+9
+ A recent study constructed a model‐based analysis estimating the severity of COVID‐19 from the cases of 38 countries. The results showed that the mean duration from onset of symptoms to death and hospital discharge was 17.8 days (95% CI, 16.9‐19.2) and 24.7 days (22.9‐28.1), respectively. The case fatality ratio in China was 1.38% (1.23‐1.53), with substantially higher ratios in older age groups (6.4% [5.7‐7.2], ≥60 years) and up to 13.4% (11.2‐15.9) in those aged 80 years or older. Estimates of case fatality ratio from international cases stratified by age were consistent with those from China (4.5% [1.8‐11.1] in those aged ≥60 years [n = 151]).
+10
+
+SARS‐CoV‐2 has strong transmission ability, and it has been occurred human‐to‐human transmission. The basic reproductive number (R0) of SARS‐CoV‐2 was estimated ~2.2 based on early patients and a subsequent study based on 75 815 individuals (from 31 December 2019 to 28 January 2020) estimated that R0 was 2.68.
+5
+, 
+8
+ Recent study from the Los Alamos National Laboratory has collected extensive individual case reports and designed mathematical modelling, which calculated the median R0 value as 5.7 (95% CI 3.8‐8.9).
+11
+ Therefore, the R0 of SARS‐CoV‐2 is rising with the increased number of confirmed cases and so far it has exceeded the R0 of MERS (R0 = 0.6) and SARS (R0 = 1).
+12
+ Scientists have predicted the trend of COVID‐19 development by studying its epidemic dynamics. It was indicated that Wuhan epidemic would peak around April 2020 and local epidemic across cities in mainland China would lag by 1‐2 weeks in a study.
+5
+ In another study, researchers estimated the epidemic peak would be on 17 February 2020 in China and an obvious rise could occur from 25 to 29 February 2020 overseas.
+13
+ Asymptomatic cases with COVID‐19 accounted for ~1% of the total number of patients and the viral load of asymptomatic patients was similar to that of symptomatic patients, which indicated that asymptomatic patients also had the potential to transmit virus.
+7
+, 
+14
+ SARS‐CoV‐2 is mainly transmitted by droplets, which invade the human body through contaminating the human conjunctival epithelium such as nose and eyes and cause infection.
+15
+ In addition to droplet transmission, faecal‐oral spread is also a potential mode of transmission.
+16
+ Although no studies have found COVID‐19 in newborns, specific antibodies have been detected in some newborns,
+17
+, 
+18
+ which indicated the possibility of transmission from the mother to her baby. Due to the particularity of droplet transmission, close contact activities, such as family clustering, usually increase the possibility of infection.
+19
+, 
+20
+ To block the viral transmission by isolation, wearing masks and other ways of reducing close contact are recommended.3PATHOGENESIS3.1Viral genome information and viral originSince COVID‐19 outbreak, the novel coronavirus SARS‐CoV‐2 causing the epidemic has been sequenced by worldwide scholars especially in China. A total of 9556 SARS‐CoV‐2 genome sequences have been uploaded in various global databases according to the data of the China National Center for Bioinformation 2019 Novel Coronavirus Resource (2019‐nCoVR) (Figure 1). Disclosure of the genome and amino acid sequence will contribute greatly to the viral classification and traceability, rapid nucleic acid detection of patients and understanding of the mechanism of viral infection and transmission. Especially, the clear viral sequence data could directly guide the selection of therapeutic agents and lay the foundation for subsequent vaccine and drug research and development.Figure 1The distribution of virus submitted by different regions. In the world, China, United Kingdom and United States have uploaded 569, 3521 and 2022 virus sequences, respectivelySARS‐CoV‐2 is composed of at least 11 ORFs (Open Reading Frames) with the full length of 29 903 bp.
+21
+ Its genome is similar to SARS‐CoV with a gene order 5'‐ORF1ab‐S‐E‐M‐N‐3'. A large gene encoding a replicase (ORF1ab) is followed by 4 major structural protein‐coding genes: S (Spike protein), E (Envelope protein), M (Membrane protein) and N (Nucleocapsid protein). There are also at least 6 accessory ORFs.
+21
+, 
+22
+ SARS‐CoV‐2 belongs to the β coronavirus and its sequence significantly differs from that of SARS‐CoV and MERS‐CoV, which have caused epidemics previously.
+1
+ Sequence alignment displays that SARS‐CoV‐2 has 79% and 50% identity with SARS‐CoV and MERS‐CoV, respectively,
+23
+ whereas 96.3% identity with a bat's coronavirus.
+24
+ Phylogenetic analysis suggests that the closest relatives of SARS‐CoV‐2 are several viruses originated from bats, such as Bat‐CoV RaTG3, Bat SARSr CoV‐ZC45 and Bat SARSr CoV‐ZXC21. Therefore, bats are assumed to be the original host of SARS‐CoV‐2. However, there should be an intermediate host, who transfers the novel coronavirus to human because the sequence of SARS‐CoV‐2 and bat virus Bat‐CoV RaTG3 has minor difference.
+23
+, 
+25
+ The suspicious intermediate host has been suggested to be the pangolin by Chinese scientists on the basis of genetic analyses, which has not been confirmed until now with the release of new pangolin coronavirus genome studies.
+26
+ A recent study has found that the SARS‐COV‐2 was easy to infect cats and ferrets, but weakly infectious to dogs, pigs, chickens and ducks, which could be important for the traceability of the SARS‐COV‐2.
+27
+ Multiple sequence analysis studies have shown that the genome sequences of SARS‐CoV‐2 exhibit more than 99% sequence identity.
+22
+, 
+23
+, 
+25
+ As a typical RNA virus, the average substitution rate for coronavirus is 10−4 substitutions per year per site.
+28
+ The low heterogeneity among sequences suggests that all these SARS‐CoV‐2 originated from the same ancestor within a very short period.
+23
+ Despite the low heterogeneity, the number of viral genome variants will consistently increase with the continuous spread of COVID‐19. So far, 4007 variants have been identified and include single nucleotide polymorphism (SNP), deletion, indel and insertion with the mutant numbers of 3951, 82, 10 and 20, respectively (https://bigd.big.ac.cn/ncov). A deletion of eight amino acid has been reported in viral polyprotein 1ab (pp1ab) protein, encoded by ORF1ab gene of SARS‐CoV‐2. The pp1ab protein is composed of 16 mature non‐structural proteins (NSPs) and seldom reported to have mutations previously. This mutant was isolated from a Japanese COVID‐19 patient, who did not show critical symptoms.
+29
+ Domenico group described the presence of two mutations of SARS‐CoV‐2, affecting the NSP6 (amino acid position 3691) and ORF10 adjacent regions (amino acid position 9659), respectively, and both mutations could confer lower stability of the protein structures.
+30
+ Another two mutations of nt28144 in ORF8 and nt8782 in ORF1a of SARS‐CoV‐2 have been noticed to have higher mutation rate of 30.53% and 29.47%, respectively.
+31
+ A study analysed 103 SARS‐CoV‐2 genomes and also found nt28144 mutant in ORF8. They classified the SARS‐CoV‐2 virus as type L (28144T) and S (28144C) based on the different amino acid of leucine and serine in nt28144. S type was indicated to be the ancestral version although the L type (mutation rate ~70%) was more prevalent than the S type (mutation rate ~30%).
+32
+ L type was speculated to be more aggressive and contagious. By analysis of 160 complete human SARS‐CoV‐2 genomes, researchers from the University of Cambridge found three central variants distinguished by amino acid alteration, named A (8782T, 28144C), B (derived from A, 8782C, 28144T) and C (derived from B, 26144T), with A being the ancestral type according to the bat out‐group coronavirus.
+33
+ The A and C types were found mainly in Europeans and Americans, whereas the B type was the most common type in East Asia.Currently, the reported mutation rate of SARS‐CoV‐2 is generally low and there is no evidence that viral recombination has occurred. Moreover, many countries have not published relevant virus genome information or only a small amount of genome information, which is obviously difficult to truly reflect the full picture of the SARS‐CoV‐2 mutation. Consequently, whether the variants of SARS‐CoV‐2 could affect its reproduction and transmission need further studies to clarify.Recently, researchers have reported that they have successfully cloned and resurrected the novel coronaviruses using reverse genetics, a method of synthesizing viruses by cloning a known viral genome sequence. This method can provide researchers with infectious virus strains without valuable clinical samples and is an attract

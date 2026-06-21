@@ -46,3 +46,16 @@ next-env.d.ts
 # data
 data/
 *.zip
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+.venv/
+venv/
+
+# rag index
+*.pkl
+*.index

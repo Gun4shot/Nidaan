@@ -1,0 +1,149 @@
+Title: Trends of Antihypertensive Prescription Among US Adults From 2010 to 2019 and Changes Following Treatment Guidelines: Analysis of Multicenter Electronic Health Records.
+Source: PubMed Central (PMC11179868)
+URL: https://pubmed.ncbi.nlm.nih.gov/11179868/
+
+pmcJ Am Heart AssocJ Am Heart Assoc1888jahaJAH3Journal of the American Heart Association: Cardiovascular and Cerebrovascular Disease2047-9980WileyPMC11179868PMC11179868.111179868111798683863934010.1161/JAHA.123.032197JAH39393JAHA/2023/0321971Original ResearchOriginal ResearchHypertensionTrends of Antihypertensive Prescription Among US Adults From 2010 to 2019 and Changes Following Treatment Guidelines: Analysis of Multicenter Electronic Health RecordsTrends of Antihypertensive Prescriptions in the United StatesLin et alLinPi‐I DebbyScDhttps://orcid.org/0000-0003-3564-4255
+1
+Rifas‐ShimanSherylMPH
+1
+MerrimanJohnMD
+1
+PetimarJoshuaScD
+1
+
+2
+YuHanPhD
+1
+DaleyMatthew F.MDhttps://orcid.org/0000-0003-1309-4096
+3
+JanickeDavid M.PhD, ABPPhttps://orcid.org/0000-0002-8493-610X
+4
+HeermanWilliam J.MD MPHhttps://orcid.org/0000-0002-9706-6860
+5
+BaileyL. CharlesMD, PhDhttps://orcid.org/0000-0002-8967-0662
+6
+MaeztuCarlosMAhttps://orcid.org/0000-0003-3212-1651
+7
+YoungJessicaPhDhttps://orcid.org/0000-0002-2758-6932
+1
+
+2
+BlockJason P.MD, MPHhttps://orcid.org/0000-0001-7660-9064
+1
+jblock1@partners.org
+
+1
+
+Department of Population Medicine
+Harvard Medical School and Harvard Pilgrim Health Care Institute
+Boston
+MA
+USA
+
+2
+
+Department of Epidemiology
+Harvard TH Chan School of Public Health
+Boston
+MA
+USA
+
+3
+
+Institute for Health Research, Kaiser Permanente Colorado
+Aurora
+CO
+USA
+
+4
+
+Department of Clinical and Health Psychology
+University of Florida
+Gainesville
+FL
+USA
+
+5
+
+Department of Pediatrics
+Vanderbilt University Medical Center
+Nashville
+TN
+USA
+
+6
+
+Applied Clinical Research Center, Children’s Hospital of Philadelphia
+Philadelphia
+PA
+USA
+
+7
+
+Department of Health Outcomes and Biomedical Informatics
+University of Florida
+Gainesville
+FL
+USA
+
+*
+Correspondence to: Jason Block, MD, MPH, Division of Chronic Disease Research Across the Lifecourse, Department of Population Medicine, Harvard Medical School and Harvard Pilgrim Health Care Institute, 401 Park Drive, Boston, MA 02215. Email: jblock1@partners.org
+
+1942024075202413946495310.1002/jah3.v13.9e03219715820230222024070520241706202417062024© 2024 The Authors. Published on behalf of the American Heart Association, Inc., by Wiley.https://creativecommons.org/licenses/by-nc-nd/4.0/This is an open access article under the terms of the http://creativecommons.org/licenses/by-nc-nd/4.0/ License, which permits use and distribution in any medium, provided the original work is properly cited, the use is non‐commercial and no modifications or adaptations are made.BackgroundGuidelines for the use of antihypertensives changed in 2014 and 2017. To understand the effect of these guidelines, we examined trends in antihypertensive prescriptions in the United States from 2010 to 2019 using a repeated cross‐sectional design.Methods and ResultsUsing electronic health records from 15 health care institutions for adults (20–85 years old) who had ≥1 antihypertensive prescription, we assessed whether (1) prescriptions of beta blockers decreased after the 2014 Eighth Joint National Committee (JNC 8) report discouraged use for first‐line treatment, (2) prescriptions for calcium channel blockers and thiazide diuretics increased among Black patients after the JNC 8 report encouraged use as first‐line therapy, and (3) prescriptions for dual therapy and fixed‐dose combination among patients with blood pressure ≥140/90 mm Hg increased after recommendations in the 2017 Hypertension Clinical Practice Guidelines. The study included 1 074 314 patients with 2 133 158 prescription episodes. After publication of the JNC 8 report, prescriptions for beta blockers decreased (3% lower in 2018–2019 compared to 2010–2014), and calcium channel blockers increased among Black patients (20% higher in 2015–2017 and 41% higher in 2018–2019, compared to 2010–2014), in accordance with guideline recommendations. However, contrary to guidelines, dual therapy and fixed‐dose combination decreased after publication of the 2017 Hypertension Clinical Practice Guidelines (9% and 11% decrease in 2018–2019 for dual therapy and fixed‐dose combination, respectively, compared to 2015–2017), and thiazide diuretics decreased among Black patients after the JNC 8 report (6% lower in 2018–2019 compared to 2010–2014).ConclusionsAdherence to guidelines on prescribing antihypertensive medication was inconsistent, presenting an opportunity for interventions to achieve better blood pressure control in the US population.antihypertensive drugselectronic health recordsguideline adherenceprescriptionsSubject CategoriesHypertensionHigh Blood PressureEpidemiologyNational Institute of Diabetes and Digestive and Kidney Diseases
+10.13039/100000062R01DK120598pmc-status-qastatus0pmc-status-liveyespmc-status-embargonopmc-status-releasedyespmc-prop-open-accessyespmc-prop-olfnopmc-prop-manuscriptnopmc-prop-legally-suppressednopmc-prop-has-pdfyespmc-prop-has-supplementyespmc-prop-pdf-onlynopmc-prop-suppress-copyrightnopmc-prop-is-real-versionnopmc-prop-is-scanned-articlenopmc-prop-preprintnopmc-prop-in-epmcyespmc-license-refCC BY-NC-NDsource-schema-version-number2.0cover-date07 May 2024details-of-publishers-convertorConverter:WILEY_ML3GV2_TO_JATSPMC version:6.4.2 mode:remove_FC converted:13.05.2024This article was sent to Monik C. Jiménez, SM, ScD, Associate Editor, for review by expert referees, editorial decision, and final disposition.Supplemental Material is available at https://www.ahajournals.org/doi/suppl/10.1161/JAHA.123.032197
+For Sources of Funding and Disclosures, see page 11.Nonstandard Abbreviations and AcronymsACCAmerican College of CardiologyAHAAmerican Heart AssociationFDCfixed‐dose combinationJNC 8Eighth Joint National CommitteeNHANESNational Health and Nutrition Examination SurveyPCORnetNational Patient‐Centered Clinical Research Network
+Clinical PerspectiveWhat Is New?
+Electronic health records capture changes in prescribing patterns associated with new treatment recommendations that could be more representative of real‐world clinical practice compared with survey data.
+What Are the Clinical Implications?
+More specific direction is needed in treatment guidelines on the specific polytherapy for hypertension.
+
+Hypertension is the most common chronic disease among adults in the United States.
+1
+ According to data from the 2015 to 2018 National Health and Nutrition Examination Survey (NHANES), 47% of the US adult population (116 million people) had hypertension, defined as a blood pressure (BP) &gt;130/80 mm Hg.
+2
+ Hypertension increases the risk of stroke and heart disease, which are the leading causes of death in the United States.
+3
+ Globally, hypertension ranked first among the leading risk factors for disability‐adjusted life years in 2015.
+4
+ For patients with hypertension, proper BP control remains the most effective way to reduce the risk of cardiovascular disease and slow the progression of kidney disease, among other associated sequelae of hypertension.
+5
+ Yet, &lt;50% of patients with hypertension in the United States have achieved recommended BP targets for control, with some evidence that the proportion in control declined in the past decade (48.2% from 2017 to 2020 versus 52.8% from 2009 to 2012).
+6
+ In addition, individuals who identify as Black or Hispanic had a lower probability of BP control.
+7
+
+One of the key factors that drives BP control is the prescribing patterns of clinicians, which is highly variable.
+8
+, 
+9
+ There are numerous factors that contribute to the choice of antihypertensive medication for individual patients, including patient and clinician preferences. To encourage evidence‐based treatment and standardization of prescribing patterns for antihypertensive regimens, the Eighth Joint National Committee (JNC 8) published a report on the prevention, detection, evaluation, and treatment of high blood pressure in 2014,
+10
+ and the American College of Cardiology and American Heart Association (ACC/AHA) published a joint recommendation for the management of hypertension in 2017 (2017 Hypertension Clinical Practice Guidelines).
+11
+, 
+12
+ Briefly, the JNC 8 recommended thiazide diuretics, angiotensin‐converting‐enzyme (ACE) inhibitors, angiotensin receptor blockers (ARBs), and calcium channel blockers (CCBs) as acceptable first‐line treatment options for non‐Black patients and recommended only thiazide diuretics or CCBs as first‐line options for Black patients. Beta blockers were no longer recommended as a first‐line option, in contrast to its previous report. The adoption of the JNC 8 recommendations varied across health care providers, with some controversies mostly centering around an established higher treatment threshold for older adults (150 mm Hg/90 mm Hg for adults 60 years and older); this recommendation deviated from more aggressive targets recommended by other organizations.
+13
+, 
+14
+ This controversy later contributed to the development of the 2017 Hypertension Clinical Practice Guidelines, which differed primarily in the choice of initial medications and the target blood pressure goals. The 2017 Hypertension Clinical Practice Guidelines recommended a broader use of thiazide diuretics, ACE inhibitors, ARBs, and CCBs for all patients, regardless of race, and emphasized selecting medications based on individual patient characteristics and comorbidities. Compared with the JNC 8 report, the 2017 Hypertension Clinical Practice Guidelines recommended a lower target BP broadly, particularly in high‐risk patients. Following the publication of those guidelines, several international studies have characterized prescribing patterns for antihypertensive medications in select subpopulations (ie, patients with chronic kidney disease [CKD])
+13
+ or in low‐ and middle‐income countries.
+14
+ Prescribing patterns have also been studied in a population‐based cohort in the United Kingdom.
+15
+ To date, there has been limited exploration of how prescribing patterns overall may have changed since publication of the JNC 8 report or 2017 Hypertension Clinical Practice Guidelines in the United States. In addition, previous studies have suggested that it can take more than a decade for clinical guidelines to be adopted into routine clinical practice and that those guidelines can be adopted differentially for patients from minority populations.
+16
+, 
+17
+ Thus, understanding how the adoption of clinical practice guidelines for antihypertension management may vary by sociodemographic variables may help identify opportunities for more equitable prescribing practices nationally.The goal of this study was to describe trends in antihypertensive prescribing patterns and BP control in the United States between 2010 to 2019 and to describe changes in prescribing after new treatment guidelines, using data from a national clinical data network. We specifically examined 3 questions regarding trends in prescribing patterns after publication of guidelines, including whether (1) the prescription of beta blockers decreased after publication of the JNC 8 report, (2) the use of CCB and thiazide diuretics increased among Black patients after JNC 8, and (3) the use of dual therapy and fixed‐dose combination (FDC) among patients with BP ≥140/90 mm Hg increased after publication of the 2017 Hypertension Clinical Practice Guidelines.MethodsStudy Design and PopulationUsing data from 15 health systems, we established a retrospective cohort using data from an ongoing study of weight change after initiation of medications used for chronic disease treatment (PCORnet MedWeight Study). The health systems are actively participating in or are legacy sites of PCORnet, the National Patient‐Centered Clinical Research Network, a research network that facilitates multisite research using electronic health records (EHRs). Sites map their clinical data entered in EHRs to the Common Data Model, allowing for interoperability across sites.
+18
+, 
+19
+, 
+20
+, 
+21
+ Sites included academic medical centers, free‐standing children's hospitals, and an integrated delivery system. We provided the full list of participating sites and detailed descriptions of their patient demographics in (Table S1). Because the data that were obtained comprised only a limited data set, informed consent was not required. A limited data set of patient‐level data was obtained after review and approval from the institutional review boards from each of the contributing institutions and transferred to Harvard Pilgrim Health Care Institute for statistical analysis. The institutional review boards from Harvard Pilgrim Health Care Institute approved the study. Because of the sensitive nature of the data collected for this study, requests to access these data from qualified researchers trained in human subject confidentiality protocols may be sent to PCORnet at frontdoor@pcornet.org.The PCORnet MedWeight Study population included all patients 20 years of age and older who had prescription records for 5 classes of medications from 2010 to 2019 across the 15 study sites. From the EHRs for these patients, we extracted data on prescriptions, diagnosis codes, demographic information, and other relevant variables. Not all sites had data for each of the years of the study. For example, a few sites switched EHR vendors during the study period. We included data from these sites only for the years in which data were consistently available (ie, excluded prescriptions before July 1, 2014 from 1 site that switched EHR vendors at that time and before July 1, 2015 from another site that had only prescription data available after that time). We identified all patients who received medications broadly classified as antihypertensive medications; we used RxNorm codes,
+22
+ the nomenclature developed by the National Library of Medicine to identify medications (list of codes available on https://github.com/PCORnet‐DRN‐OC/Query‐Details/tree/master/MedWeight%20Project). For this analysis, we excluded prescriptions for patients who (1) were &gt;85 years of age, (2) had a diagnosis of congestive heart failure, (3) did not have a hypertension diagnosis (any International Classification of Diseases, Ninth or Tenth Revision, Clinical Modification [ICD‐9‐CM, ICD‐10‐CM] code for hypertension) or elevated BP ≥140/90 mm Hg on the same day as the antihypertensive prescription, and (4) had a pregnancy diagnosis code ±280 days from the index antihypertensive prescription. We excluded these patients because antihypertensive medications may be used to treat other diagnoses, not including hypertension, or may be transient in the case of pregnancy; further, medication options during pregnancy are often quite limited.We identified multiple prescriptions given to patients within 30 days as the same prescribing episode (ie, medications from 2 subclasses provided within 30 days were counted as polytherapy). We kept only the first 3 treatment episodes for this analysis to focus on likely first‐line treatments; these treatment episodes could have been for the same subclasses or for

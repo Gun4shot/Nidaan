@@ -1,0 +1,415 @@
+[
+  {
+    "doc_id": "c969dad6078d",
+    "filename": "pubmed_pmc7245614.txt",
+    "chunk_count": 36,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "4e7438ae50fc",
+    "filename": "pubmed_pmc4000544.txt",
+    "chunk_count": 36,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "cd32805d5bd8",
+    "filename": "pubmed_pmc11462910.txt",
+    "chunk_count": 26,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "3bea0b0c41d8",
+    "filename": "pubmed_pmc11179868.txt",
+    "chunk_count": 35,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "e5158cec5dc6",
+    "filename": "pubmed_pmc4258384.txt",
+    "chunk_count": 35,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "96fcbebda974",
+    "filename": "pubmed_pmc3352722.txt",
+    "chunk_count": 7,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "6e5c6be2fea3",
+    "filename": "pubmed_pmc7132403.txt",
+    "chunk_count": 35,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "ab1af88c01ed",
+    "filename": "pubmed_pmc11387186.txt",
+    "chunk_count": 28,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "1b9409b5d556",
+    "filename": "pubmed_pmc5496091.txt",
+    "chunk_count": 40,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "9adf18a96474",
+    "filename": "pubmed_pmc2258398.txt",
+    "chunk_count": 6,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "a6d6e56d03d1",
+    "filename": "pubmed_pmc5690602.txt",
+    "chunk_count": 32,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "2b6d53906bad",
+    "filename": "pubmed_pmc12083283.txt",
+    "chunk_count": 30,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "6e4c8d402395",
+    "filename": "pubmed_pmc4609090.txt",
+    "chunk_count": 35,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "677eaa605769",
+    "filename": "pubmed_pmc8013826.txt",
+    "chunk_count": 7,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "e502ed5cf3b1",
+    "filename": "pubmed_pmc6313021.txt",
+    "chunk_count": 37,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "e8caefbd2813",
+    "filename": "pubmed_pmc4591619.txt",
+    "chunk_count": 37,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "90d7c352dffe",
+    "filename": "pubmed_pmc8142517.txt",
+    "chunk_count": 35,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "b1092f9bab4d",
+    "filename": "pubmed_pmc4504363.txt",
+    "chunk_count": 8,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "a7f137dfcdf0",
+    "filename": "pubmed_pmc7264656.txt",
+    "chunk_count": 37,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "693bd2011065",
+    "filename": "pubmed_pmc7273146.txt",
+    "chunk_count": 29,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "f7aa60e680cd",
+    "filename": "pubmed_pmc2714523.txt",
+    "chunk_count": 30,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "49382682c5c7",
+    "filename": "pubmed_pmc7268639.txt",
+    "chunk_count": 35,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "a1005aeb43d6",
+    "filename": "pubmed_pmc2778258.txt",
+    "chunk_count": 36,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "bed0fd06136e",
+    "filename": "pubmed_pmc4234044.txt",
+    "chunk_count": 36,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "677930a4e263",
+    "filename": "pubmed_pmc6201023.txt",
+    "chunk_count": 31,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "7f877cecb198",
+    "filename": "pubmed_pmc6489143.txt",
+    "chunk_count": 35,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "1ec725842d4d",
+    "filename": "pubmed_pmc5503451.txt",
+    "chunk_count": 36,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "941701185b02",
+    "filename": "pubmed_pmc6346523.txt",
+    "chunk_count": 37,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "4b7a4a59ffd8",
+    "filename": "pubmed_pmc8031287.txt",
+    "chunk_count": 12,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "e59a1a7fd663",
+    "filename": "pubmed_pmc2483567.txt",
+    "chunk_count": 34,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "afa486821d2d",
+    "filename": "pubmed_pmc4474143.txt",
+    "chunk_count": 34,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "71f6d7b931b4",
+    "filename": "pubmed_pmc6016549.txt",
+    "chunk_count": 36,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "909eda077c67",
+    "filename": "pubmed_pmc8215394.txt",
+    "chunk_count": 8,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "810985463ab4",
+    "filename": "pubmed_pmc5015284.txt",
+    "chunk_count": 29,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "239e3efe58a0",
+    "filename": "pubmed_pmc11559136.txt",
+    "chunk_count": 37,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "5a1c2d60559b",
+    "filename": "pubmed_pmc8702176.txt",
+    "chunk_count": 37,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "d302969aa4d2",
+    "filename": "pubmed_pmc13157766.txt",
+    "chunk_count": 32,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "74f376831a48",
+    "filename": "pubmed_pmc5651671.txt",
+    "chunk_count": 33,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "77323648cebd",
+    "filename": "pubmed_pmc12355227.txt",
+    "chunk_count": 36,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "4903686d2c74",
+    "filename": "pubmed_pmc7392523.txt",
+    "chunk_count": 31,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "f8f06eb3ca4d",
+    "filename": "pubmed_pmc9115962.txt",
+    "chunk_count": 37,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "44ed7fd1da72",
+    "filename": "pubmed_pmc11443062.txt",
+    "chunk_count": 26,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "2fb0a76c76c9",
+    "filename": "pubmed_pmc11103512.txt",
+    "chunk_count": 37,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "5a61f2991fd2",
+    "filename": "pubmed_pmc11093335.txt",
+    "chunk_count": 33,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "233e3b737a94",
+    "filename": "pubmed_pmc5856146.txt",
+    "chunk_count": 36,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "fa5435c962b5",
+    "filename": "pubmed_pmc2736403.txt",
+    "chunk_count": 32,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "6212d70abd5c",
+    "filename": "pubmed_pmc5590836.txt",
+    "chunk_count": 29,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "898b5dc2ba1d",
+    "filename": "pubmed_pmc12353897.txt",
+    "chunk_count": 38,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "330e80db8b8f",
+    "filename": "pubmed_pmc12684091.txt",
+    "chunk_count": 26,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "721765f4e8e1",
+    "filename": "pubmed_pmc6693587.txt",
+    "chunk_count": 28,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "20694f9a5ed6",
+    "filename": "pubmed_pmc8221517.txt",
+    "chunk_count": 26,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "31962c03799c",
+    "filename": "pubmed_pmc8557084.txt",
+    "chunk_count": 34,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "1b348436a45e",
+    "filename": "pubmed_pmc2898118.txt",
+    "chunk_count": 37,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "8a83a3ba9cf1",
+    "filename": "pubmed_pmc11957931.txt",
+    "chunk_count": 30,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "ed8c7fc81407",
+    "filename": "pubmed_pmc5395876.txt",
+    "chunk_count": 40,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "e48c846d456f",
+    "filename": "pubmed_pmc5054779.txt",
+    "chunk_count": 6,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "1a1649f55005",
+    "filename": "pubmed_pmc6777225.txt",
+    "chunk_count": 11,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "bef64e6ec738",
+    "filename": "pubmed_pmc12520155.txt",
+    "chunk_count": 10,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  },
+  {
+    "doc_id": "3a462a798c76",
+    "filename": "pubmed_pmc4033464.txt",
+    "chunk_count": 8,
+    "source_org": "PubMed",
+    "source_type": "research_article"
+  }
+]
