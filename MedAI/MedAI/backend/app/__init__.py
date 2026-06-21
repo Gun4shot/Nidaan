@@ -20,12 +20,14 @@ def create_app():
     from app.routes.predict import predict_bp
     from app.routes.documents import documents_bp
     from app.routes.rag import rag_bp
+    from app.routes.diagnose import diagnose_bp
 
     app.register_blueprint(health_bp)
     app.register_blueprint(chat_bp)
     app.register_blueprint(predict_bp)
     app.register_blueprint(documents_bp)
     app.register_blueprint(rag_bp)
+    app.register_blueprint(diagnose_bp)
 
     @app.errorhandler(404)
     def not_found(e):
@@ -41,6 +43,7 @@ def create_app():
 
     from app.services.model_service import model_service
     from app.services.rag.vector_store import vector_store
+    from app.services.rag.bm25_store import bm25_store
 
     def _load_model():
         try:
@@ -55,7 +58,8 @@ def create_app():
             if loaded:
                 app.logger.info(
                     f"RAG index loaded: {vector_store.chunk_count} chunks "
-                    f"from {vector_store.doc_count} documents"
+                    f"from {vector_store.doc_count} documents "
+                    f"(BM25: {bm25_store.chunk_count} chunks)"
                 )
             else:
                 app.logger.info("No RAG index found — upload via POST /documents/upload")

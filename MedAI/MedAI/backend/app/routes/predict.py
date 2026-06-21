@@ -23,7 +23,13 @@ def predict():
     if not model_service.is_ready:
         return jsonify({"error": "Model is still loading. Try again shortly."}), 503
 
-    query = " ".join(symptoms)
+    structured_context = _build_structured_context(cleaned)
+
+    query_parts = list(symptoms)
+    if structured_context:
+        query_parts.append(structured_context)
+    query = " ".join(query_parts)
+
     rag_context = ""
     rag_results = []
     try:
@@ -33,13 +39,17 @@ def predict():
     except Exception as e:
         logger.warning(f"RAG retrieval failed (proceeding without): {e}")
 
-    prompt = build_symptom_prompt(symptoms, rag_context=rag_context)
+    prompt = build_symptom_prompt(
+        symptoms,
+        rag_context=rag_context,
+        structured_data=cleaned,
+    )
 
     try:
         raw_response = model_service.generate(
             prompt,
-            max_new_tokens=600,
-            temperature=0.4,
+            max_new_tokens=800,
+            temperature=0.3,
         )
     except Exception as e:
         logger.error(f"Inference error: {e}", exc_info=True)
@@ -74,3 +84,20 @@ def predict():
         "rag_used": bool(rag_context),
         "sources": sources,
     }), 200
+
+
+def _build_structured_context(cleaned: dict) -> str:
+    parts = []
+    if cleaned.get("fever_pattern"):
+        parts.append(f"fever pattern: {cleaned['fever_pattern']}")
+    if cleaned.get("symptom_duration"):
+        parts.append(f"duration: {cleaned['symptom_duration']}")
+    if cleaned.get("onset_type"):
+        parts.append(f"onset: {cleaned['onset_type']}")
+    if cleaned.get("severity_scale"):
+        parts.append(f"severity: {cleaned['severity_scale']}/10")
+    if cleaned.get("travel_history"):
+        parts.append(f"travel history: {cleaned['travel_history']}")
+    if cleaned.get("region"):
+        parts.append(f"region: {cleaned['region']}")
+    return " ".join(parts)

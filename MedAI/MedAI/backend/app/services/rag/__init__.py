@@ -55,7 +55,7 @@ class EmbeddingService:
 
     @property
     def is_biomedical(self) -> bool:
-        biomedical_keywords = ["biobert", "pubmed", "biomed", "clinical", "med", "sapbert", "biovect"]
+        biomedical_keywords = ["biobert", "pubmed", "biomed", "clinical", "med", "sapbert", "biovect", "scibert", "mnli", "snli"]
         model_lower = Config.EMBEDDING_MODEL.lower()
         return any(kw in model_lower for kw in biomedical_keywords)
 

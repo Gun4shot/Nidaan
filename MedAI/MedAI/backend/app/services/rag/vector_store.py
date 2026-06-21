@@ -5,6 +5,7 @@ import faiss
 import numpy as np
 from pathlib import Path
 from config import Config
+from app.services.rag.bm25_store import bm25_store
 
 logger = logging.getLogger(__name__)
 
@@ -66,6 +67,9 @@ class VectorStore:
 
         self.chunks.extend(new_chunks)
         self.metadata.extend(new_metadata)
+
+        bm25_store.add_chunks(new_chunks, new_metadata)
+
         logger.info(f"Added {len(new_chunks)} chunks. Total: {self.index.ntotal}")
 
     def delete_by_doc_id(self, doc_id: str) -> int:
@@ -91,6 +95,8 @@ class VectorStore:
         else:
             self.index = None
 
+        bm25_store.delete_by_doc_id(doc_id)
+
         logger.info(f"Deleted {removed} chunks for doc_id={doc_id}")
         return removed
 
@@ -107,6 +113,8 @@ class VectorStore:
         sources = self.get_documents()
         with open(self._sources_file(), "w") as f:
             json.dump(sources, f, indent=2)
+
+        bm25_store.save(self._index_path)
 
         logger.info(f"Index saved: {len(self.chunks)} chunks")
 
@@ -125,6 +133,9 @@ class VectorStore:
                 self.chunks = json.load(f)
             with open(meta_path, "r") as f:
                 self.metadata = json.load(f)
+
+            bm25_store.load(self._index_path)
+
             logger.info(f"Index loaded: {len(self.chunks)} chunks")
             return True
         except Exception as e:

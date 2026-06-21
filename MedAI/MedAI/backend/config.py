@@ -19,7 +19,7 @@ class Config:
     TEMPERATURE = float(os.getenv("TEMPERATURE", "0.3"))
     TOP_P = float(os.getenv("TOP_P", "0.9"))
     REPETITION_PENALTY = float(os.getenv("REPETITION_PENALTY", "1.1"))
-    MAX_CONTEXT = 2048
+    MAX_CONTEXT = 4096
 
     # ── Flask ──────────────────────────────────────────
     FLASK_PORT = int(os.getenv("FLASK_PORT", "5000"))
@@ -28,18 +28,21 @@ class Config:
     # ── RAG — Embeddings ───────────────────────────────
     EMBEDDING_MODEL = os.getenv(
         "EMBEDDING_MODEL",
-        "sentence-transformers/all-MiniLM-L6-v2",
+        "pritamdeka/BioBERT-mnli-snli-scinli-scitail-mednli-stsb",
     )
     EMBEDDING_DEVICE = os.getenv("EMBEDDING_DEVICE", "cpu")
 
     # ── RAG — Chunking ─────────────────────────────────
     RAG_INDEX_DIR = os.getenv("RAG_INDEX_DIR", "rag_index")
-    RAG_CHUNK_SIZE = int(os.getenv("RAG_CHUNK_SIZE", "500"))
-    RAG_CHUNK_OVERLAP = int(os.getenv("RAG_CHUNK_OVERLAP", "100"))
+    RAG_CHUNK_SIZE = int(os.getenv("RAG_CHUNK_SIZE", "2048"))
+    RAG_CHUNK_OVERLAP = int(os.getenv("RAG_CHUNK_OVERLAP", "400"))
 
     # ── RAG — Retrieval ────────────────────────────────
-    RAG_TOP_K = int(os.getenv("RAG_TOP_K", "5"))
-    RAG_MIN_SCORE = float(os.getenv("RAG_MIN_SCORE", "0.3"))
+    RAG_TOP_K = int(os.getenv("RAG_TOP_K", "2"))
+    RAG_MIN_SCORE = float(os.getenv("RAG_MIN_SCORE", "0.2"))
+    RAG_HYBRID_SEARCH = os.getenv("RAG_HYBRID_SEARCH", "true").lower() == "true"
+    RAG_BM25_WEIGHT = float(os.getenv("RAG_BM25_WEIGHT", "0.4"))
+    RAG_DENSE_WEIGHT = float(os.getenv("RAG_DENSE_WEIGHT", "0.6"))
 
     # ── RAG — Reranker ─────────────────────────────────
     RERANKER_MODEL = os.getenv(
@@ -54,3 +57,7 @@ class Config:
 
     # ── RAG — Medical Documents Folder ─────────────────
     MEDICAL_DOCS_DIR = os.getenv("MEDICAL_DOCS_DIR", "medical_documents")
+
+    # ── Gemini API (Stage 2 — Context Enricher) ───────
+    GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+    GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")

@@ -12,9 +12,13 @@ def health():
     except Exception:
         cuda = False
 
-    return jsonify({
+    response = {
         "status": "ok",
         "llm": model_service.is_ready,
         "device": model_service.device if model_service.is_ready else "unknown",
         "cuda": cuda,
-    }), 200
+    }
+    if model_service.load_error:
+        response["llm_error"] = model_service.load_error
+
+    return jsonify(response), 200
