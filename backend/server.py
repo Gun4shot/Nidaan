@@ -180,7 +180,7 @@ def classify():
         return jsonify({'error': 'No image provided'}), 400
 
     model_key = request.form.get('model', 'brain_tumor')
-    if model_key not in ('brain_tumor', 'chest_xray', 'covid19', 'malaria'):
+    if model_key not in ('brain_tumor', 'chest_xray', 'covid19', 'malaria', 'fracture'):
         return jsonify({'error': 'Invalid model key'}), 400
 
     image_file = request.files['image']

@@ -14,6 +14,7 @@ const MODEL_OPTIONS = [
   { key: 'chest_xray', label: 'Chest X-Ray' },
   { key: 'covid19', label: 'COVID-19' },
   { key: 'malaria', label: 'Malaria' },
+  { key: 'fracture', label: 'Fracture' },
 ];
 
 interface ImageAnalysisTabProps {

@@ -47,6 +47,15 @@ MODEL_CONFIG = {
             'cell_images': 'Cell Images',
         },
     },
+    'fracture': {
+        'file': 'fracture_efficientnet_b3.pth',
+        'classes': ['test', 'train', 'val'],
+        'display': {
+            'test': 'Fracture Detected',
+            'train': 'No Fracture',
+            'val': 'Indeterminate',
+        },
+    },
 }
 
 _preprocess = transforms.Compose([
