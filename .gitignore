@@ -31,6 +31,11 @@ yarn-error.log*
 # env files
 .env*
 
+# model files
+*.pth
+backend/nidaan_outputs/
+backend/uploads/
+
 # vercel
 .vercel
 

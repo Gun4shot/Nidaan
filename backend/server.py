@@ -166,5 +166,37 @@ def download_csv():
                      download_name='nidaan_blood_dataset.csv')
 
 
+# ============================================================
+# IMAGE CLASSIFICATION
+# ============================================================
+
+sys.path.insert(0, os.path.join(BASE_DIR, 'models'))
+from classifier import classify_image, get_available_models
+
+
+@app.route('/api/classify', methods=['POST'])
+def classify():
+    if 'image' not in request.files:
+        return jsonify({'error': 'No image provided'}), 400
+
+    model_key = request.form.get('model', 'brain_tumor')
+    if model_key not in ('brain_tumor', 'chest_xray', 'covid19', 'malaria'):
+        return jsonify({'error': 'Invalid model key'}), 400
+
+    image_file = request.files['image']
+    image_bytes = image_file.read()
+
+    try:
+        result = classify_image(image_bytes, model_key)
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/classify/models', methods=['GET'])
+def classify_models():
+    return jsonify({'models': get_available_models()})
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=False)

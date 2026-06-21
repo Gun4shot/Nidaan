@@ -7,6 +7,15 @@ import Waveform from './Waveform';
 
 type LayoutMode = 'single' | 'grid' | 'compare';
 
+const API_BASE = 'http://localhost:5000';
+
+const MODEL_OPTIONS = [
+  { key: 'brain_tumor', label: 'Brain Tumor' },
+  { key: 'chest_xray', label: 'Chest X-Ray' },
+  { key: 'covid19', label: 'COVID-19' },
+  { key: 'malaria', label: 'Malaria' },
+];
+
 interface ImageAnalysisTabProps {
   images: ImageItem[];
   onImagesChange: (imgs: ImageItem[]) => void;
@@ -34,11 +43,14 @@ export default function ImageAnalysisTab({ images, onImagesChange, chatMessages,
   const [zoom, setZoom] = useState(1);
   const [layout, setLayout] = useState<LayoutMode>('single');
   const [splitRatio, setSplitRatio] = useState(50);
+  const [selectedModel, setSelectedModel] = useState('brain_tumor');
+  const [classifying, setClassifying] = useState(false);
   const isDragging = useRef(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const prefixRef = useRef('');
   const wasListeningRef = useRef(false);
+  const fileMapRef = useRef<Map<number, File>>(new Map());
 
   const voice = useVoiceInput({
     onInterim: (text) => setInput(prefixRef.current + text),
@@ -95,16 +107,79 @@ export default function ImageAnalysisTab({ images, onImagesChange, chatMessages,
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (!files) return;
-    const newImages: ImageItem[] = Array.from(files).map(file => ({
-      id: Date.now() + Math.random(),
-      name: file.name,
-      src: URL.createObjectURL(file),
-    }));
+    const newImages: ImageItem[] = [];
+    for (const file of Array.from(files)) {
+      const id = Date.now() + Math.random();
+      fileMapRef.current.set(id, file);
+      newImages.push({ id, name: file.name, src: URL.createObjectURL(file) });
+    }
     onImagesChange([...images, ...newImages]);
   };
 
   const handleRemoveImage = (index: number) => {
+    const img = images[index];
+    if (img) fileMapRef.current.delete(img.id);
     onImagesChange(images.filter((_, i) => i !== index));
+  };
+
+  const handleClassify = async () => {
+    if (!currentImage || classifying) return;
+
+    const file = fileMapRef.current.get(currentImage.id);
+    if (!file) {
+      onChatMessagesChange([
+        ...chatMessages,
+        { id: Date.now(), role: 'assistant', content: 'Cannot classify this image — the original file is not available. Please re-upload the image.', time: '' },
+      ]);
+      return;
+    }
+
+    setClassifying(true);
+
+    onChatMessagesChange([
+      ...chatMessages,
+      { id: Date.now(), role: 'assistant', content: `Analyzing ${currentImage.name} with ${MODEL_OPTIONS.find(m => m.key === selectedModel)?.label} model...`, time: '' },
+    ]);
+
+    try {
+      const formData = new FormData();
+      formData.append('image', file);
+      formData.append('model', selectedModel);
+
+      const res = await fetch(`${API_BASE}/api/classify`, { method: 'POST', body: formData });
+      const data = await res.json();
+
+      if (!res.ok) {
+        onChatMessagesChange([
+          ...chatMessages,
+          { id: Date.now(), role: 'assistant', content: `Classification failed: ${data.error}`, time: '' },
+        ]);
+        return;
+      }
+
+      const resultLines = [
+        `**Classification Result**`,
+        ``,
+        `Prediction: **${data.prediction}**`,
+        `Confidence: **${data.confidence}%**`,
+        `Model: ${MODEL_OPTIONS.find(m => m.key === selectedModel)?.label}`,
+        ``,
+        `All probabilities:`,
+        ...data.all_results.map((r: any) => `  • ${r.label}: ${r.confidence}%`),
+      ];
+
+      onChatMessagesChange([
+        ...chatMessages,
+        { id: Date.now(), role: 'assistant', content: resultLines.join('\n'), time: '' },
+      ]);
+    } catch (err) {
+      onChatMessagesChange([
+        ...chatMessages,
+        { id: Date.now(), role: 'assistant', content: 'Cannot connect to analytics server. Make sure the Python backend is running on port 5000.', time: '' },
+      ]);
+    } finally {
+      setClassifying(false);
+    }
   };
 
   const handleSend = () => {
@@ -144,6 +219,14 @@ export default function ImageAnalysisTab({ images, onImagesChange, chatMessages,
                 <button className="imaging__tool-btn" onClick={() => setZoom(z => Math.max(z - 0.25, 0.5))}><span className="material-symbols-outlined">zoom_out</span></button>
                 <button className="imaging__tool-btn" onClick={() => setZoom(1)}><span className="material-symbols-outlined">fit_screen</span></button>
                 <span className="imaging__toolbar-divider" />
+                <select className="imaging__model-select" value={selectedModel} onChange={(e) => setSelectedModel(e.target.value)}>
+                  {MODEL_OPTIONS.map(m => <option key={m.key} value={m.key}>{m.label}</option>)}
+                </select>
+                <button className={`imaging__classify-btn ${classifying ? 'imaging__classify-btn--loading' : ''}`} onClick={handleClassify} disabled={classifying} title="Classify image">
+                  <span className="material-symbols-outlined">{classifying ? 'hourglass_empty' : 'biotech'}</span>
+                  {classifying ? 'Analyzing...' : 'Classify'}
+                </button>
+                <span className="imaging__toolbar-divider" />
                 <button className="imaging__tool-btn" onClick={() => handleRemoveImage(activeImage)} title="Remove current image"><span className="material-symbols-outlined">delete</span></button>
                 <button className="imaging__tool-btn" onClick={handleUpload}><span className="material-symbols-outlined">add_photo_alternate</span></button>
               </div>
@@ -171,10 +254,10 @@ export default function ImageAnalysisTab({ images, onImagesChange, chatMessages,
       <div className="imaging__resize-handle" onMouseDown={handleMouseDown} />
 
       <div className="imaging__chat" style={{ width: `${100 - splitRatio}%` }}>
-        {!hasUserMessages && (
+        {!hasUserMessages && chatMessages.length === 0 && (
           <div className="imaging__chat-welcome">
             <span className="material-symbols-outlined">smart_toy</span>
-            <p>Upload images and ask me anything about them.</p>
+            <p>Upload images, select a model, and click Classify to analyze.</p>
           </div>
         )}
 
@@ -182,7 +265,11 @@ export default function ImageAnalysisTab({ images, onImagesChange, chatMessages,
           {chatMessages.map((msg) => (
             <div key={msg.id} className={`imaging__chat-msg imaging__chat-msg--${msg.role}`}>
               <div className="imaging__chat-msg-body">
-                {msg.content}
+                {msg.content.split('\n').map((line, i) => {
+                  if (line.startsWith('**') && line.endsWith('**')) return <p key={i}><strong>{line.slice(2, -2)}</strong></p>;
+                  if (line.startsWith('  • ')) return <p key={i} className="imaging__chat-list-item">{line}</p>;
+                  return <p key={i}>{line}</p>;
+                })}
                 <CopyButton text={msg.content} />
               </div>
             </div>
